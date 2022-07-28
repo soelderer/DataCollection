@@ -2,11 +2,10 @@
         const dataRaw = await fetch(URL);
         if(dataRaw.status != 200){
 console.log(dataRaw.status)
-            defaultCAM() 
             return;
         }
 
-
+        usingMangoDB = true;
         const data = await dataRaw.json()
     
         config = JSON.parse(data.config);
