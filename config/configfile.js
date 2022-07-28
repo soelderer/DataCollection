@@ -16,4 +16,5 @@ var config = {
     ADAPTIVESTUDYurl: null, // "https://studien.psychologie.uni-freiburg.de/publix/304/start?batchId=379&generalMultiple" // URL the CAM data should be append to
 }
 
+// global variable
 var usingMangoDB = null;
