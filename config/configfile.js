@@ -17,4 +17,4 @@ var config = {
 }
 
 // global variable
-var usingMangoDB = null;
+var usingMangoDB = false;
