@@ -275,6 +275,8 @@ class Elements {
             var connector = new ConnectorCAM();
             connector.establishConnection(source, target, element.intensity, element.agreement);
             connector.id = element.id;
+            connector.isDeletable = element.isDeletable;
+
             this.connectors.push(connector);
         }
         this.draw();
