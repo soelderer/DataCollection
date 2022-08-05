@@ -260,4 +260,9 @@ if(config.hideAmbivalent){
     $(function () {
         $('#hideAmvivalentNode').hide();
     });
+}else{
+    $('#hideAmvivalentNode').show();
+    $(function () {
+        $('#hideAmvivalentNode').show();
+    });
 }

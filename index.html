@@ -118,13 +118,23 @@
     </div>
   </body>
 
+
+
+  <script>
+    $(function () {
+    document.getElementById("alert-text").innerHTML = languageFileOut.ls_01
+    })
+  </script>
+
+
+
   <!-- defocus div element: -->
   <div id="alert" style="background: white; visibility: hidden" class="content">
-    <div id="alert-text" style="text-align: center">
-      <strong
-        >Please do not change or minimize the browser window while the study is
-        running. Only if there is a break in the course of the study.</strong
-      >
+    <div style="text-align: center;">
+      <div id="alert-text" style="font-weight: bold;">
+        </div>
+ 
+ 
       <br />
       <button
         id="alert-button-text"

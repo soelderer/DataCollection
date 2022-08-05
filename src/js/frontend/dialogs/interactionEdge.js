@@ -211,6 +211,11 @@ if (config.hideArrows) {
     $(function () {
         $('#hideConnectorDirInfluence').hide();
     });
+}else{
+    $('#hideConnectorDirInfluence').show();
+    $(function () {
+        $('#hideConnectorDirInfluence').show();
+    });
 }
 
 
@@ -221,6 +226,12 @@ if (config.showOnlyPosSlid) {
         $('#hideSliderDisAgreeRef').hide();
         $('#hideSliderDisAgreeRef2').hide();
         $('#showSliderAgreeOnlyRef').show();
+    });
+}else{
+    $(function () {
+        $('#hideSliderDisAgreeRef').show();
+        $('#hideSliderDisAgreeRef2').show();
+        $('#showSliderAgreeOnlyRef').hide();
     });
 }
 
