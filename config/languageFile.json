@@ -172,7 +172,7 @@
   {
     "X_identifier": "qr_concept_13",
     "X_location": "quick reference",
-    "english": "<b>Delete:</b> Double click on existing concept and press on the “trash bin” symbol top right",
+    "english": "<b>Delete:</b> Double click on existing concept and press on the \"trash bin\" symbol top right",
     "german": "<b>Löschen:</b> Doppelklick auf bereits existierendes Konzept und anschließend Klick auf \"Papierkorb\" Symbol in der oberen rechten Ecke, des Fensters, das sich öffnet",
     "ukrainian": "",
     "russian": "",
@@ -212,7 +212,7 @@
   {
     "X_identifier": "qr_concept_23",
     "X_location": "quick reference",
-    "english": "<b>Add comment:</b> type comment in the “Comment” section",
+    "english": "<b>Add comment:</b> type comment in the \"Comment\" section",
     "german": "<b>Kommentar hinzufügen:</b> Schreiben Sie einen Kommentar in das Eingabefeld \"Kommentar\"",
     "ukrainian": "",
     "russian": "",
@@ -252,7 +252,7 @@
   {
     "X_identifier": "qr_connection_13",
     "X_location": "quick reference",
-    "english": "<b>Delete:</b> Double click on existing concept and press on the “trash bin” symbol top right",
+    "english": "<b>Delete:</b> Double click on existing concept and press on the \"trash bin\" symbol top right",
     "german": "<b>Löschen:</b> Doppelklick auf bereits existierende Verbindung und anschließend Klick auf \"Papierkorb\" Symbol in der oberen rechten Ecke, des Fensters, das sich öffnet",
     "ukrainian": "",
     "russian": "",
@@ -278,6 +278,16 @@
     "russian": "",
     "french": "",
     "spanish": "<b>Cambiar tipo e intensidad:</b> Use el control deslizante para cambiar el de la conexión (reforzamineto o inhibición)"
+  },
+  {
+    "X_identifier": "qr_connection_21a",
+    "X_location": "quick reference",
+    "english": "<b>Change strength:</b> Use the slider to change the strength of the connection",
+    "german": "<b>Stärke verändern:</b> Benutzen Sie den Regler, um die Stärke der Verbindung zu verändern",
+    "ukrainian": "",
+    "russian": "",
+    "french": "",
+    "spanish": "<b>Cambiar intensidad:</b> Use el control deslizante para cambiar el de la conexión (reforzamineto)"
   },
   {
     "X_identifier": "qr_connection_22",
@@ -322,32 +332,32 @@
   {
     "X_identifier": "qr_buttons_11",
     "X_location": "quick reference",
-    "english": "save Cognitive Affective Map and send data to the server",
-    "german": "Cognitive Affective Map speichern und Daten zum Server senden",
+    "english": "save Cognitive-Affective Map and send data to the server",
+    "german": "Cognitive-Affective Map speichern und Daten zum Server senden",
     "ukrainian": "",
     "russian": "",
     "french": "",
-    "spanish": "Guardar Cognitive Affective Map y mandar datos al servidor"
+    "spanish": "Guardar Cognitive-Affective Map y mandar datos al servidor"
   },
   {
     "X_identifier": "qr_buttons_12",
     "X_location": "quick reference",
-    "english": "download Cognitive Affective Map as a picture",
-    "german": "Cognitive Affective Map als Bild herunterladen",
+    "english": "download Cognitive-Affective Map as a picture",
+    "german": "Cognitive-Affective Map als Bild herunterladen",
     "ukrainian": "",
     "russian": "",
     "french": "",
-    "spanish": "Bajar Cognitive Affective Map en de imagen "
+    "spanish": "Bajar Cognitive-Affective Map en de imagen "
   },
   {
     "X_identifier": "qr_buttons_13",
     "X_location": "quick reference",
-    "english": "delete Cognitive Affective Map and no data will be send to the server",
-    "german": "Cognitive Affective Map löschen und keine Daten werden zum Server gesendet",
+    "english": "delete Cognitive-Affective Map and no data will be send to the server",
+    "german": "Cognitive-Affective Map löschen und keine Daten werden zum Server gesendet",
     "ukrainian": "",
     "russian": "",
     "french": "",
-    "spanish": "Borrar Cognitive Affective Map y no se envian datos al servidor"
+    "spanish": "Borrar Cognitive-Affective Map y no se envian datos al servidor"
   },
   {
     "X_identifier": "qr_tab_01",
@@ -470,6 +480,16 @@
     "spanish": "Comentario"
   },
   {
+    "X_identifier": "nd_05buttonDelete",
+    "X_location": "nodes dialog (nd)",
+    "english": "Delete Concept",
+    "german": "Konzept löschen",
+    "ukrainian": "",
+    "russian": "",
+    "french": "",
+    "spanish": "Borrar concepto"
+  },
+  {
     "X_identifier": "cd_01",
     "X_location": "connector dialog (cd)",
     "english": "Type and Strength of Connection",
@@ -480,17 +500,17 @@
     "spanish": "Tipo e intensidad de la conexión"
   },
   {
-    "X_identifier": "cd_02",
+    "X_identifier": "cd_01a",
     "X_location": "connector dialog (cd)",
-    "english": "Support",
-    "german": "Verstärkung",
+    "english": "Strength of Connection:",
+    "german": "Stärke der Verbindung:",
     "ukrainian": "",
     "russian": "",
     "french": "",
-    "spanish": "Reforzamiento"
+    "spanish": "Intensidad de la conexión"
   },
   {
-    "X_identifier": "cd_03",
+    "X_identifier": "cd_02",
     "X_location": "connector dialog (cd)",
     "english": "Inhibition",
     "german": "Hemmung",
@@ -498,6 +518,16 @@
     "russian": "",
     "french": "",
     "spanish": "Inhibición"
+  },
+  {
+    "X_identifier": "cd_03",
+    "X_location": "connector dialog (cd)",
+    "english": "Support",
+    "german": "Verstärkung",
+    "ukrainian": "",
+    "russian": "",
+    "french": "",
+    "spanish": "Reforzamiento"
   },
   {
     "X_identifier": "cd_04",
@@ -510,7 +540,7 @@
     "spanish": "Dirección de la conexión"
   },
   {
-    "X_identifier": "cd_05",
+    "X_identifier": "cd_05button",
     "X_location": "connector dialog (cd)",
     "english": "Concepts influence each other",
     "german": "Konzepte beeinflussen sich gegenseitig",
@@ -520,7 +550,7 @@
     "spanish": "Conceptos se influyen mutualmente"
   },
   {
-    "X_identifier": "cd_06",
+    "X_identifier": "cd_06button",
     "X_location": "connector dialog (cd)",
     "english": "Concepts influence each other in a one-sided direction. Press button multiple times to change direction",
     "german": "Konzepte beeinflussen sich nur in eine Richtung. Klicken Sie mehrfach auf den Button, um die Richtung der Beeinflussung zu ändern",
@@ -528,5 +558,15 @@
     "russian": "",
     "french": "",
     "spanish": "La influencia entre los conceptos es en una sola direccion (unidireccional). Haga clic en el botón varias veces para cambiar la dirección"
+  },
+  {
+    "X_identifier": "cd_07buttonDelete",
+    "X_location": "connector dialog (cd)",
+    "english": "Delete Connector",
+    "german": "Verbindung löschen",
+    "ukrainian": "",
+    "russian": "",
+    "french": "",
+    "spanish": "Borrar conexión"
   }
 ]

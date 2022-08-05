@@ -6,9 +6,6 @@
     <!-- for Microsoft Browser? -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- language file -->
-    <script src="./config/languageFile.js" crossorigin="anonymous"></script>
-
     <!-- css files: -->
     <link rel="stylesheet" href="./src/css/main.css" />
     <link rel="stylesheet" href="./src/css/toastrmin.css" />
@@ -122,7 +119,11 @@
 
   <script>
     $(function () {
-    document.getElementById("alert-text").innerHTML = languageFileOut.ls_01
+    document.getElementById("alert-text").innerHTML = languageFileOut.ls_01; // leaving fullscreen
+
+    document.getElementById("dialogReference").title = languageFileOut.qr_top; // Quick reference
+
+    document.getElementById("quickref").title = languageFileOut.btr_01; // buttons top right (btr)
     })
   </script>
 
@@ -166,7 +167,8 @@
     crossorigin="anonymous"
   ></script>
 
- 
+     <!-- language file -->
+     <script src="./config/languageFile.js" crossorigin="anonymous"></script>
 
   <script>
     var delay = (function () {

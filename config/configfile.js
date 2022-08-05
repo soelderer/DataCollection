@@ -10,8 +10,11 @@ var config = {
     LengthSentence: 16, // include breaklines if >= X characters
     LengthWords: 12, // include breaklines after each word with cumsum >= X characters
     ShowResearcherButtons: false, // if true = show researcher functionalities
-    cameraFeature: false, // include camera / splotlight feature to move screen
-    fullScreen: false, // if true = study in fullscreen mode + paradata
+    cameraFeature: true, // include camera / splotlight feature to move screen
+    fullScreen: true, // if true = study in fullscreen mode + paradata
+
+    setLanguage: "English", // set language of your CAM study
+
     AdaptiveStudy: false, // run as adaptive study 
     ADAPTIVESTUDYurl: null, // "https://studien.psychologie.uni-freiburg.de/publix/304/start?batchId=379&generalMultiple" // URL the CAM data should be append to
 }
