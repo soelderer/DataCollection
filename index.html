@@ -222,12 +222,7 @@
         document.head.appendChild(script);
       })();
 
-      (function () {
-        const script = document.createElement("script");
-        script.src = "./src/js/frontend/eventListeners_frontend.js";
-        script.async = false;
-        document.head.appendChild(script);
-      })();
+
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/colours.js";
@@ -257,6 +252,12 @@
       // add buttons participant 
       (function () {
         const script = document.createElement("script");
+        script.src = "./src/js/frontend/buttons/participant/reference.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+      (function () {
+        const script = document.createElement("script");
         script.src = "./src/js/frontend/buttons/participant/saveButton.js";
         script.async = false;
         document.head.appendChild(script);
@@ -274,7 +275,7 @@
         document.head.appendChild(script);
       })();
 
-    // add buttons participant 
+    // add buttons researcher 
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/buttons/researcher/downloadJSONbutton.js";
@@ -290,6 +291,14 @@
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/buttons/researcher/createConfigSave.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+
+      // add fronetend event listeners
+      (function () {
+        const script = document.createElement("script");
+        script.src = "./src/js/frontend/eventListeners_frontend.js";
         script.async = false;
         document.head.appendChild(script);
       })();

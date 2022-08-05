@@ -122,4 +122,13 @@ var target = document.getElementById("dialogReference");
 target.innerHTML += ref;
 
 
+$(function () {
+    if(config.cameraFeature){
+        $('#showCameraFeature').show();
+    }else{
+        $('#showCameraFeature').hide();
+    }
+});
+
+
 
