@@ -1,36 +1,35 @@
 /* default CAM which will be redrawn if CAM is deleted */
+function shuffle(queslist) {
+    let array_emp = [];
+    for (var i = 0; i < queslist.length; i++) {
+      array_emp.push(i);
+    }
+  
+    let j, x;
+    for (i = array_emp.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1));
+      x = array_emp[i];
+      array_emp[i] = array_emp[j];
+      array_emp[j] = x;
+    }
+    return array_emp;
+  }
+
+const ConceptsCAM = ["positive feelings", "negative feelings", 
+"trust in policitical institutions",
+"perceived risks", "perceived benefits"];
+
+const index_ConceptsCAM = shuffle(ConceptsCAM);
+console.log("index_ConceptsCAM:", index_ConceptsCAM);
+
 
 function defaultCAM() {
-    CAM.addElement(new NodeCAM(0, "universal basic income", {
+    CAM.addElement(new NodeCAM(0, "Bedingungsloses Grundeinkommen", {
         x: 650,
         y: 400
-    }, false, false, false));
+    }, true, false, false));
 
-    CAM.addElement(new NodeCAM(0, "risks", {
-        x: 450,
-        y: 400
-    }, false, false, false));
-
-    CAM.addElement(new NodeCAM(0, "potentials", {
-        x: 850,
-        y: 400
-    }, false, false, false));
-
-
-    
-    var connector1 = new ConnectorCAM();
-    connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
-    connector1.value = 1
-    CAM.addElement(connector1);
-
-    var connector2 = new ConnectorCAM();
-    connector2.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, true);
-    connector2.value = 1
-    CAM.addElement(connector2);
-
-    CAM.connectors[0].isDeletable = false
-    CAM.connectors[1].isDeletable = false
-        /*
+    /*
     CAM.addElement(new NodeCAM(1, "I cannot be moved or deleted", {
         x: 300,
         y: 100
