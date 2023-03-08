@@ -24,12 +24,6 @@ console.log("index_ConceptsCAM:", index_ConceptsCAM);
 
 
 function defaultCAM() {
-    CAM.addElement(new NodeCAM(0, "Bedingungsloses Grundeinkommen", {
-        x: 650,
-        y: 400
-    }, true, false, false));
-
-    /*
     CAM.addElement(new NodeCAM(1, "I cannot be moved or deleted", {
         x: 300,
         y: 100
@@ -54,26 +48,22 @@ function defaultCAM() {
 
 
     var connector1 = new ConnectorCAM();
-    connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
-    connector1.value = 1
+    connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, false);
+    connector1.value = 1;
     CAM.addElement(connector1);
 
     var connector2 = new ConnectorCAM();
-    connector2.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, false);
-    connector2.value = 1
+    connector2.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, true);
+    connector2.value = 1;
     CAM.addElement(connector2);
 
     var connector3 = new ConnectorCAM();
     connector3.establishConnection(CAM.nodes[0], CAM.nodes[3], IncreaseSliderIntensity, true);
-    connector3.value = 1
+    connector3.value = 1;
     CAM.addElement(connector3);
     connector3.isBidirectional = false;
 
-    var connector4 = new ConnectorCAM();
-    connector4.establishConnection(CAM.nodes[0], CAM.nodes[4], IncreaseSliderIntensity, true);
-    connector4.value = -1
-    CAM.addElement(connector4);
-    */
+
 
     CAM.draw();
 }

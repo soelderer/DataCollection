@@ -14,9 +14,9 @@ var config = {
     LengthWords: 8, // include breaklines after each word with cumsum >= X characters
     ShowResearcherButtons: false, // if true = show researcher functionalities
     cameraFeature: false, // include camera / splotlight feature to move screen
-    fullScreen: true, // if true = study in fullscreen mode + paradata
+    fullScreen: false, // if true = study in fullscreen mode + paradata
 
-    setLanguage: "German", // set language of your CAM study
+    setLanguage: "English", // set language of your CAM study
 
 
     showNotPopupStart: true, // only working if fullScreen is set to true
@@ -27,7 +27,7 @@ var config = {
 
 // global variable
 var usingMangoDB = false;
-var usingJATOS = true;
+var usingJATOS = false;
 
 
 console.log("config config file:", config)

@@ -77,7 +77,7 @@ class Elements {
             }
 
             this.connectors.push(connector);
-            console.log("This element has been added.");
+            console.log("Connector has been added.");
             return {
                 "success": true,
                 connector
@@ -136,7 +136,7 @@ class Elements {
             return false;
         }
         this.nodes.push(node);
-        console.log("This element has been added.");
+        console.log("Node has been added.");
         return {
             "success": true,
             node
