@@ -24,44 +24,10 @@ console.log("index_ConceptsCAM:", index_ConceptsCAM);
 
 
 function defaultCAM() {
-    CAM.addElement(new NodeCAM(1, "I cannot be moved or deleted", {
-        x: 300,
-        y: 100
-    }, false, false, true));
-
-    CAM.addElement(new NodeCAM(-1, "I cannot be moved but deleted", {
-        x: 300,
-        y: 700
-    }, false, true, true));
-
-    CAM.addElement(new NodeCAM(0, "Neutral concept (cannot change text)", {
-        x: 1000,
-        y: 100
-    }, true, true, false));
-
-    CAM.addElement(new NodeCAM(10, "Ambivalent concept", {
-        x: 1000,
-        y: 700
+    CAM.addElement(new NodeCAM(0, "middle concept", {
+        x: 600,
+        y: 400
     }, true, true, true));
-
-
-
-
-    var connector1 = new ConnectorCAM();
-    connector1.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, false);
-    connector1.value = 1;
-    CAM.addElement(connector1);
-
-    var connector2 = new ConnectorCAM();
-    connector2.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, true);
-    connector2.value = 1;
-    CAM.addElement(connector2);
-
-    var connector3 = new ConnectorCAM();
-    connector3.establishConnection(CAM.nodes[0], CAM.nodes[3], IncreaseSliderIntensity, true);
-    connector3.value = 1;
-    CAM.addElement(connector3);
-    connector3.isBidirectional = false;
 
 
 

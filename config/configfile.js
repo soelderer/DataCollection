@@ -8,17 +8,17 @@ var config = {
 
     hideAmbivalent: false, // if false = possible to draw ambivalent node
     showOnlyPosSlid: false, // show only slider for agreement (+1 - +3)
-    MaxLengthWords: 3, // maximum number of words for each concept
+    MaxLengthWords: 13, // maximum number of words for each concept
     MaxLengthChars: 40, // maximum number of characters for each concept
-    LengthSentence: 16, // include breaklines if >= X characters
+    LengthSentence: 20, // include breaklines if >= X characters
     LengthWords: 8, // include breaklines after each word with cumsum >= X characters
-    ShowResearcherButtons: true, // if true = show researcher functionalities
+    ShowResearcherButtons: false, // if true = show researcher functionalities
     cameraFeature: false, // include camera / splotlight feature to move screen
 
     setLanguage: "English", // set language of your CAM study
 
     fullScreen: false, // if true = study in fullscreen mode + paradata
-    showNotPopupStart: true, // only working if fullScreen is set to true
+    showNotPopupStart: false, // only working if fullScreen is set to true
 
     AdaptiveStudy: true, // run as adaptive study 
     ADAPTIVESTUDYurl: "https://www.unipark.de/uc/fr_uni_inst_psych_allg/28b6/", // "https://studien.psychologie.uni-freiburg.de/publix/304/start?batchId=379&generalMultiple" // URL the CAM data should be append to
