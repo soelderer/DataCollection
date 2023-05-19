@@ -1,4 +1,4 @@
-/* default CAM which will be redrawn if CAM is deleted */
+/* default CAM which will be redrawn if CAM is deleted
 function shuffle(queslist) {
     let array_emp = [];
     for (var i = 0; i < queslist.length; i++) {
@@ -15,21 +15,42 @@ function shuffle(queslist) {
     return array_emp;
   }
 
-const ConceptsCAM = ["positive feelings", "negative feelings", 
-"trust in policitical institutions",
-"perceived risks", "perceived benefits"];
+const ConceptsCAM = ["Vorteile", "Nachteile"];
 
 const index_ConceptsCAM = shuffle(ConceptsCAM);
 console.log("index_ConceptsCAM:", index_ConceptsCAM);
-
+ */
 
 function defaultCAM() {
-    CAM.addElement(new NodeCAM(0, "middle concept", {
+    CAM.addElement(new NodeCAM(0, "default CAM", {
         x: 600,
         y: 400
-    }, true, true, true));
+    }, false, false, false));
+
+    /*
+    CAM.addElement(new NodeCAM(0, ConceptsCAM[index_ConceptsCAM[0]], {
+      x: 450,
+      y: 400
+  }, false, false, false));
 
 
+  CAM.addElement(new NodeCAM(0, ConceptsCAM[index_ConceptsCAM[1]], {
+    x: 750,
+    y: 400
+}, false, false, false));
 
-    CAM.draw();
+
+var connector = new ConnectorCAM();
+connector.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
+CAM.addElement(connector);
+CAM.connectors[0].isDeletable = false;
+
+var connector = new ConnectorCAM();
+connector.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, true);
+CAM.addElement(connector);
+CAM.connectors[1].isDeletable = false;
+*/ 
+
+
+CAM.draw();
 }
