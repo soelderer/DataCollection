@@ -31,4 +31,4 @@ yarn-error.log*
 # files not needed
 CAM instructions/
 .vscode/
-test_stuff/
+test_stuff
