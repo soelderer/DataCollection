@@ -22,7 +22,7 @@ console.log("index_ConceptsCAM:", index_ConceptsCAM);
  */
 
 function defaultCAM() {
-    CAM.addElement(new NodeCAM(0, "default CAM", {
+    CAM.addElement(new NodeCAM(0, "central concept", {
         x: 600,
         y: 400
     }, false, false, false));
