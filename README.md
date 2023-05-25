@@ -63,8 +63,7 @@ This software has been developed by
 
 * Julius Fenn
 * Florian Gouret
-* Michael Gorki
 * Andrea Kiesel
 
 To quote this software:
-Fenn, J., Gouret, F., Michael G. & Kiesel, A. (2023). Cognitive-Affective Maps extended logic (Version 1.1.2) [Computer software]. https://camgalaxy.github.io/
+Fenn, J., Gouret, F. & Kiesel, A. (2023). Cognitive-Affective Maps extended logic (Version 1.1.2) [Computer software]. https://camgalaxy.github.io/
