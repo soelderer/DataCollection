@@ -6,9 +6,11 @@ authors:
     given-names: Julius
   - family-names: Gouret
     given-names: Florian
+  - family-names: Gorki
+    given-names: Michael
   - family-names: Kiesel
     given-names: Andrea
 url: https://camgalaxy.github.io/
 title: "Cognitive-Affective Maps extended logic"
-version: 1.0.5
-date-released: 2022-01-15
+version: 1.1.2
+date-released: 2023-05-01
