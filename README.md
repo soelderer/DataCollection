@@ -1,22 +1,23 @@
 # A C.A.M. Extended Logic 🐪
 
-Cognitive-Affective Map Extended Logic (C.A.M.E.L.) 🐪 is an open-source software to draw Cognitive Affective Maps. It aims to offer people an easy and intuitive interface on which they could design mind map that can be analysed by researchers. 
+Cognitive-Affective Map Extended Logic (C.A.M.E.L.) 🐪 is an open-source software to draw Cognitive Affective Maps. It aims to offer people an easy and intuitive interface on which they could design mind map that can be analysed by researchers.
 
 ## Getting Started
 
 The standalone version is based on pure html, css and javascript. It is perfect in case you only need an interface to draw CAM.
 
-Two differents options are available regarding the use of this software: 
-*  All the data can be sent to personal servers such as MangoDB, Jatos, Pavlovia or any other ones. 
+Two differents options are available regarding the use of this software:
+
+* All the data can be sent to personal servers such as MangoDB, Jatos, Pavlovia or any other ones.
 * We currently setting up an administrative panel to easily set up and configure your C.A.M.E.L. study.
 
 ## Analyse your data
 
-
 Data can be analyzed using the following software:
+
 - CAM-App, links to
-    - version 1.X: [link](https://fennapps.shinyapps.io/shinyCAMELv01/)
-    - version 2.X: [link](https://fennapps.shinyapps.io/shinyCAMEL_v02/)
+  - version 1.X: [link](https://fennapps.shinyapps.io/shinyCAMELv01/)
+  - version 2.X: [link](https://fennapps.shinyapps.io/shinyCAMEL_v02/)
 
 ### Prerequisites
 
@@ -33,13 +34,11 @@ To use this software with the server version:
 
 To use this software in the standalone version:
 
-
 ```
 $ git clone XXX
 $ cd XXX
 $ start index.html
 ```
-
 
 ## Deployment
 
@@ -62,9 +61,10 @@ $ start index.html
 
 This software has been developed by
 
-* Florian Gouret
 * Julius Fenn
+* Florian Gouret
+* Michael Gorki
 * Andrea Kiesel
 
-To quote this software: 
-Gouret, F., Fenn, J., & Kiesel, A. (2022). Cognitive-Affective Maps extended logic (Version 1.0.4) [Computer software]. https://camgalaxy.github.io/
+To quote this software:
+Fenn, J., Gouret, F., Michael G. & Kiesel, A. (2023). Cognitive-Affective Maps extended logic (Version 1.1.2) [Computer software]. https://camgalaxy.github.io/
