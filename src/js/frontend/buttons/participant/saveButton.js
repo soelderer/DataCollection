@@ -84,7 +84,7 @@ function saveCam() {
     if (ResbfsAl !== 1) {
       toastr.warning(
         languageFileOut.popSave_01unconnectedB,
-        languageFileOut.popSave_02unconnectedB +
+        languageFileOut.popSave_02unconnectedB + " " + 
           ResbfsAl +
           languageFileOut.popSave_03unconnectedB,
         {
