@@ -16,6 +16,6 @@ function deleteCam() {
         toastr.error(languageFileOut.confirmDeleting_02message);
         console.log("complete CAM has been deleted");
 
-        defaultCAM()
+        defaultCAM();
     }
 }

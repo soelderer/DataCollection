@@ -1,3 +1,4 @@
+if(usingMangoDB){
     async function fetchData(URL) {
         const dataRaw = await fetch(URL);
         if(dataRaw.status != 200){
@@ -41,6 +42,16 @@ console.log(dataRaw.status)
     
     
     fetchData(link + "&participantID=" + participantID);
+}else{
+    console.log("default CAM drawn - MongoDB is not used")
+
+    async function getDefaultCAM() {
+        defaultCAM();
+    }
+
+    getDefaultCAM();
+}
+
 
 
 

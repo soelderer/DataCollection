@@ -1,3 +1,4 @@
+if(usingMangoDB){
     async function fetchData(URL) {
         const dataRaw = await fetch(URL);
         if(dataRaw.status != 200){
@@ -45,6 +46,6 @@ console.log(dataRaw.status)
     fetchData(link2);
 
     console.log('config outer: ', config)
-
-
-
+}
+    
+    
