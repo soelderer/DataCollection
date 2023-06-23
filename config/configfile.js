@@ -24,8 +24,6 @@ var config = {
     ADAPTIVESTUDYurl: "https://baselpsychology.eu.qualtrics.com/jfe/form/SV_5BCiPNlYEphOQWa", // "https://studien.psychologie.uni-freiburg.de/publix/304/start?batchId=379&generalMultiple" // URL the CAM data should be append to
 
     setReminder: false, // if true = after X ms 2 reminder pop up
-
-
 }
 
 // global variable
