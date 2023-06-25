@@ -1,7 +1,7 @@
 /* default values */
 var config = {
-    CAMproject: "myProject", // "proj_" + uuid.v4(), // necessary for server (see ERM)
-    ConNumNodes: 1, // number of nodes necessary to draw
+    CAMproject: "MyDefaultProjectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
+    ConNumNodes: 10, // number of nodes necessary to draw
     hideArrows: true, // if false = possible to draw arrows
 
     BidirectionalDefault: true, // if true the default connection is bidirectional
@@ -21,14 +21,19 @@ var config = {
     showNotPopupStart: true, // only working if fullScreen is set to true
 
     AdaptiveStudy: true, // run as adaptive study 
-    ADAPTIVESTUDYurl: "https://baselpsychology.eu.qualtrics.com/jfe/form/SV_5BCiPNlYEphOQWa", // "https://studien.psychologie.uni-freiburg.de/publix/304/start?batchId=379&generalMultiple" // URL the CAM data should be append to
+    ADAPTIVESTUDYurl: "http://example.org/", // URL the CAM data should be append to
 
     setReminder: false, // if true = after X ms 2 reminder pop up
 }
 
 // global variable
-var usingMangoDB = false;
+var usingMangoDB = true;
 var usingJATOS = false;
 
-
 console.log("config config file:", config)
+
+
+// ! not change
+const webAddress = "http://localhost:3001"; 
+
+

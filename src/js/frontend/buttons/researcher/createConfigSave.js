@@ -115,6 +115,7 @@ const interactionSetUpStudy = `
             <option value="English">English</option>
             <option value="German">German</option>
             <option value="Spanish">Spanish</option>
+            <option value="Chinese">Chinese</option>
             </select> 
         </label>
     </div>
