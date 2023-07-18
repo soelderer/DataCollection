@@ -17,7 +17,21 @@ function onDownloadSVGfile() {
         downloadCAMsvg(CAMSVG, "CAMsvg-" + CAM.idCAM + ".svg");
     }
 
-    toastr.info('You can save your CAM as a picture (svg file).');
+
+    if(!config.surpressSaveCAMpopup){
+        toastr.info(
+            languageFileOut.popSavePicture_CAM,
+            {
+              closeButton: true,
+              timeOut: 4000,
+              positionClass: "toast-top",
+              preventDuplicates: true,
+            }
+          );
+    }
+
+
+
 }
 
 function downloadCAMsvg(svgEl, fileName) {

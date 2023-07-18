@@ -1085,6 +1085,14 @@ const languageFile_european = [
         "spanish": "Usted habría mandado los datos de su CAM al servidor con éxito. Para guardar sus datos de forma permanente, por favor use nuestro panel de administración o aloje C.A.M.E.L. en su propio servidor."
     },
     {
+        "X_identifier": "popSavePicture_CAM",
+        "X_location": "popup save button CAM as picture (popSavePicture)",
+        "english": "You can save your CAM as a picture (svg file).",
+        "german": "Sie können Ihr CAM als Bild (svg-Datei) speichern.",
+        "french": "You can save your CAM as a picture (svg file).",
+        "spanish": "You can save your CAM as a picture (svg file)."
+    },
+    {
         "X_identifier": "ndw_01tooManyWords",
         "X_location": "nodes dialog warnings (ndw)",
         "english": "Instead, please draw several connected concepts.",
