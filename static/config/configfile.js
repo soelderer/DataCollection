@@ -2,12 +2,13 @@
 var config = {
     CAMproject: "MyDefaultProjectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
     ConNumNodes: 10, // number of nodes necessary to draw
-    hideArrows: false, // if false = possible to draw arrows
-
+    
+    hideArrows: true, // if false = possible to draw arrows
     BidirectionalDefault: false, // if true the default connection is bidirectional
 
     hideAmbivalent: false, // if false = possible to draw ambivalent node
     showOnlyPosSlid: false, // show only slider for agreement (+1 - +3)
+    
     MaxLengthWords: 3, // maximum number of words for each concept
     MaxLengthChars: 40, // maximum number of characters for each concept
     LengthSentence: 20, // include breaklines if >= X characters
@@ -15,10 +16,10 @@ var config = {
     ShowResearcherButtons: true, // if true = show researcher functionalities
     cameraFeature: false, // include camera / splotlight feature to move screen
 
-    setLanguage: "English", // set language of your CAM study, e.g. French
+    setLanguage: "English", // set language of your CAM study, e.g. French 
 
     fullScreen: false, // if true = study in fullscreen mode + paradata
-    showNotPopupStart: true, // only working if fullScreen is set to true
+    showNotPopupStart: true, // true = no pop up shown; only working if fullScreen is set to true
 
     AdaptiveStudy: true, // run as adaptive study 
     ADAPTIVESTUDYurl: "http://example.org/", // URL the CAM data should be append to

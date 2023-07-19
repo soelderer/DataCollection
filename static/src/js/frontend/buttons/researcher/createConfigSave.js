@@ -42,7 +42,7 @@ const interactionSetUpStudy = `
 
         <div class="row" style="background-color:#bababa;">
             <div class="column1">
-                Possibility to draw arrows / directed connections (recommended):
+                Possibility to draw arrows / directed connections:
             </div>
             <div class="column2">
                 <label class="switch" style="margin-top: 8px;">
@@ -55,6 +55,22 @@ const interactionSetUpStudy = `
 
         <div class="row" style="background-color:#aaa;">
             <div class="column1">
+                As default the drawn connection is bidirectional:
+            </div>
+            <div class="column2">
+                <label class="switch" style="margin-top: 8px;">
+                <input type="checkbox" id="setBidirectionalDefault" checked>
+                <div class="slider round">
+                </div>
+                </label>
+            </div>
+        </div>
+
+
+        
+
+        <div class="row" style="background-color:#bababa;">
+            <div class="column1">
                 Possibility to draw only supporting connections (no recommendation):
             </div>
             <div class="column2">
@@ -66,7 +82,7 @@ const interactionSetUpStudy = `
             </div>
         </div>
 
-        <div class="row" style="background-color:#bababa;">
+        <div class="row" style="background-color:#aaa;">
             <div class="column1">
                 Possibility to to draw ambivalent nodes (no recommendation):
             </div>
@@ -79,7 +95,7 @@ const interactionSetUpStudy = `
             </div>
         </div>
         
-        <div class="row" style="background-color:#aaa;">
+        <div class="row" style="background-color:#bababa;">
             <div class="column1">
                 Include splotlight feature to move screen (only recommended if large CAMs are expected):
             </div>
@@ -92,7 +108,7 @@ const interactionSetUpStudy = `
             </div>
         </div>
 
-        <div class="row" style="background-color:#bababa;">
+        <div class="row" style="background-color:#aaa;">
         <div class="column1">
             Set study to fullscreen mode and collect paradata (recommended):
         </div>
@@ -105,7 +121,7 @@ const interactionSetUpStudy = `
         </div>
     </div>
 
-    <div class="row" style="background-color:#aaa;">
+    <div class="row" style="background-color:#bababa;">
         <div class="column1">
             Set the language of the C.A.M.E.L. interface:
         </div>
@@ -167,6 +183,8 @@ function setConfigCAMfile() {
             MaxLengthChars: $('#setMaxLengthChars').val(), // maximum number of characters for each concept
     
             hideArrows: null, // if false = possible to draw arrows
+            BidirectionalDefault: null, // if false = possible to draw arrows
+
             showOnlyPosSlid: null, // if true show only slider for agreement (+1 - +3)
     
             hideAmbivalent: null,  // if false = possible to draw ambivalent node
@@ -201,6 +219,13 @@ function setConfigCAMfile() {
     }else{
         setCAMConfig.config.hideArrows = true;
     }
+
+    if($('#setBidirectionalDefault').is(":checked")){
+        setCAMConfig.config.BidirectionalDefault = false;
+    }else{
+        setCAMConfig.config.BidirectionalDefault = true;
+    }
+
 
     if($('#sethideAmbivalent').is(":checked")){
         setCAMConfig.config.hideAmbivalent = false;
@@ -321,7 +346,7 @@ $(function () {
        setConfigCAMfile();
     });
 
-    $('#sethideArrows,#setfullScreen, #sethideAmbivalent, #setshowOnlyPosSlid, #setcameraFeature').click(function () {
+    $('#sethideArrows, #setBidirectionalDefault, #setfullScreen, #sethideAmbivalent, #setshowOnlyPosSlid, #setcameraFeature').click(function () {
         setConfigCAMfile();
     });
 

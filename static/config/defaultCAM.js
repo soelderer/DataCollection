@@ -27,6 +27,17 @@ function defaultCAM() {
         y: 400
     }, false, false, false));
 
+    CAM.addElement(new NodeCAM(0, "central concept 2", {
+      x: 400,
+      y: 400
+  }, false, false, false));
+
+
+    var connector = new ConnectorCAM();
+    connector.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, false);
+    CAM.addElement(connector);
+    CAM.connectors[0].isDeletable = false;
+
     /*
     CAM.addElement(new NodeCAM(0, ConceptsCAM[index_ConceptsCAM[0]], {
       x: 450,
