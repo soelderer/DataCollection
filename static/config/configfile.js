@@ -1,6 +1,6 @@
 /* default values */
 var config = {
-    CAMproject: "MyDefaultProjectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
+    CAMproject: "projectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
     ConNumNodes: 10, // number of nodes necessary to draw
     
     hideArrows: true, // if false = possible to draw arrows

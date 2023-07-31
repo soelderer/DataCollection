@@ -31,7 +31,11 @@ var showDialogOnce = (function() {
 
 /* DEFAULT values */
 // if no arrows closeness to node
-var DistanceArrows = 40;
+if (config.hideArrows) {
+    var DistanceArrows = 20;
+} else {
+    var DistanceArrows = 40;
+}
 
 // hide all researcher functionalities
 /*
