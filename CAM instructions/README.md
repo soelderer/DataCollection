@@ -23,4 +23,5 @@ The following persons have been working on the presentations:
 * Julius Fenn
 * Michael Gorki
 * Wilhelm Gros
+* Nina Frings
 * Andrea Kiesel
