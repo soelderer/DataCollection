@@ -3,20 +3,20 @@ Class for pre-processing CAM data used to
 - check necessary conditions (like #nodes)
 */
 
-console.log("Preprocessing step")
+console.log("Preprocessing step");
 
 // set cytoscape container to add elements
 var cy = cytoscape({
     //very commonly used options
     //container: document.getElementById('cy'), // container to render in
-    elements: [ /* ... */ ],
-    style: cytoscape.stylesheet()
-        .selector('node')
-        .style({
-            'background-color': 'blue'
-        }),
+    elements: [
+        /* ... */
+    ],
+    style: cytoscape.stylesheet().selector("node").style({
+        "background-color": "blue",
+    }),
     layout: {
-        name: 'grid' /* , ... */
+        name: "grid" /* , ... */,
     },
     data: {
         /* ... */
@@ -26,7 +26,7 @@ var cy = cytoscape({
     zoom: 1,
     pan: {
         x: 0,
-        y: 0
+        y: 0,
     },
 
     // interaction options:
@@ -37,7 +37,7 @@ var cy = cytoscape({
     panningEnabled: false,
     userPanningEnabled: false,
     boxSelectionEnabled: true,
-    selectionType: 'single',
+    selectionType: "single",
     autolock: false,
     autoungrabify: false,
     autounselectify: false,
@@ -48,51 +48,52 @@ var cy = cytoscape({
     hideEdgesOnViewport: false,
     textureOnViewport: false,
     motionBlur: false,
-    pixelRatio: 'auto'
+    pixelRatio: "auto",
 });
 
-
-
-
-
-
-// add nodes and edges to cy 
+// add nodes and edges to cy
 function addElementsCy() {
-   // var CAMnodesCy = CAM.nodes.filter(element => element.isActive === true);
-   // var CAMconnectorsCy = CAM.connectors.filter(element => element.isActive === true);
+    // var CAMnodesCy = CAM.nodes.filter(element => element.isActive === true);
+    // var CAMconnectorsCy = CAM.connectors.filter(element => element.isActive === true);
 
     // console.log("connectors within Cy: ", CAMconnectorsCy);
     // add nodes
-    CAM.nodes.forEach(elt => { //  CAM.nodes -> only active nodes here
+    CAM.nodes.forEach((elt) => {
+        //  CAM.nodes -> only active nodes here
         //(new Node(elt))
         if (elt.getIsActive()) {
-            cy.add([{
-                group: 'nodes',
-                data: {
-                    id: elt.id,
-                    weight: elt.getValue()
+            cy.add([
+                {
+                    group: "nodes",
+                    data: {
+                        id: elt.id,
+                        weight: elt.getValue(),
+                    },
+                    position: {
+                        x: elt.getPosition().x,
+                        y: elt.getPosition().y,
+                    },
                 },
-                position: {
-                    x: elt.getPosition().x,
-                    y: elt.getPosition().y
-                }
-            }]);
+            ]);
         }
     });
 
     // add connectors
     var h = 0;
-    CAM.connectors.forEach(elt => { //   CAM.connectors -> only active connectors here
+    CAM.connectors.forEach((elt) => {
+        //   CAM.connectors -> only active connectors here
         //(new Node(elt))
         if (elt.getIsActive()) {
-            cy.add([{
-                group: 'edges',
-                data: {
-                    id: elt.id,
-                    source: elt.source,
-                    target: elt.target
-                }
-            }]);
+            cy.add([
+                {
+                    group: "edges",
+                    data: {
+                        id: elt.id,
+                        source: elt.source,
+                        target: elt.target,
+                    },
+                },
+            ]);
             h += 1;
         }
     });
@@ -120,23 +121,22 @@ function bfsAlgorithm(rootsnode) {
             roots: rootsnode,
             visit: function (v, e, u, i, depth) {
                 // console.log('bfs visited ' + v.id());
-    
             },
-            directed: false
+            directed: false,
         });
 
-        var NodesPathtmp = bfs.path.filter((element) => element.group() === "nodes");
-        NodesPathtmp.forEach(element => NodesIDs.push(element.id()));
+        var NodesPathtmp = bfs.path.filter(
+            (element) => element.group() === "nodes"
+        );
+        NodesPathtmp.forEach((element) => NodesIDs.push(element.id()));
         //console.log("bfs visited -> Nodes IDs: ", NodesIDs, "in round: ", timesRun);
     }
 
-    // set added nodes and edges to zero: 
+    // set added nodes and edges to zero:
     cy.remove(cy.elements());
 
     return timesRun;
 }
-
-
 
 /* add centrality algorithms: 
 https://js.cytoscape.org/#collection/centrality

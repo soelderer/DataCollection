@@ -1,13 +1,19 @@
 class NodeCAM {
-
-    constructor(value, text, position, isDraggable = true, isDeletable = true, isTextChangeable = true) {
+    constructor(
+        value,
+        text,
+        position,
+        isDraggable = true,
+        isDeletable = true,
+        isTextChangeable = true
+    ) {
         this.id = uuid.v4();
         this.value = value;
         this.text = text;
         this.comment = "";
         this.position = position;
         this.isActive = true;
-        this.date = (new Date).getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
+        this.date = new Date().getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
         this.kind = "Node";
         this.isSelected = false;
         this.isConnectorSelected = false;
@@ -19,7 +25,7 @@ class NodeCAM {
 
         this.enterLog({
             type: "create node",
-            value: value
+            value: value,
         });
     }
 
@@ -72,8 +78,6 @@ class NodeCAM {
         this.isTextChangeable = val;
     }
 
-
-
     /* get functions */
 
     getValue() {
@@ -110,9 +114,6 @@ class NodeCAM {
         return this.isTextChangeable;
     }
 
-
-
-
     updateNode(field, value) {
         if (field === "text") this.setText(value);
         if (field === "position") this.setPosition(value);
@@ -125,9 +126,9 @@ class NodeCAM {
 
     enterLog(log) {
         this.eventLog.push({
-            time: (new Date).getTime(),
+            time: new Date().getTime(),
             type: log.type,
-            value: log.value
+            value: log.value,
         });
     }
 
@@ -142,7 +143,4 @@ class NodeCAM {
     isNode() {
         return true;
     }
-
 }
-
-

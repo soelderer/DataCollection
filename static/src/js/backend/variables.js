@@ -36,9 +36,5 @@ var CounterChangeAmbiConcept = 0;
 var zoomScaleNode = 0.45;
 //var zoomScaleConnector = 1;
 
-
-
 // increase slider intensity by X (thicker lines)
 const IncreaseSliderIntensity = 3;
-
-
