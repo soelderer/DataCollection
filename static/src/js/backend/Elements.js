@@ -1,11 +1,10 @@
 class Elements {
-
     constructor() {
         this.idCAM = uuid.v4();
         this.creator = uuid.v4(); // id of the maker
         this.projectCAM = config.CAMproject;
         this.defocusCAM = null;
-        this.date = (new Date).getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
+        this.date = new Date().getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
         this.nodes = [];
         this.connectors = [];
         this.currentID = null;
@@ -17,21 +16,18 @@ class Elements {
         this.isIncoming = false;
     }
 
-
     addElement(newElement) {
         const kind = newElement.getKind();
         switch (kind) {
             case "Node":
-                var {
-                    success, node
-                } = this.addNode(newElement);
-                if (success & WEBSOCKET) sendMessage("Add", null, "Node", null, node);
+                var { success, node } = this.addNode(newElement);
+                if (success & WEBSOCKET)
+                    sendMessage("Add", null, "Node", null, node);
                 break;
             case "Connector":
-                var {
-                    success, connector
-                } = this.addConnector(newElement);
-                if (success & WEBSOCKET) sendMessage("Add", null, "Connector", null, connector);
+                var { success, connector } = this.addConnector(newElement);
+                if (success & WEBSOCKET)
+                    sendMessage("Add", null, "Connector", null, connector);
                 break;
         }
     }
@@ -49,7 +45,8 @@ class Elements {
                 }
                 break;
         }
-        if (WEBSOCKET) sendMessage("Update", this.currentID, kind, field, value);
+        if (WEBSOCKET)
+            sendMessage("Update", this.currentID, kind, field, value);
         this.draw();
     }
 
@@ -57,30 +54,30 @@ class Elements {
         if (this.hasSelectedNode) {
             const tmp_id = this.currentID;
             var success = this.deleteNode();
-            if (success & WEBSOCKET) sendMessage("Update", tmp_id, "Node", "active", false);
+            if (success & WEBSOCKET)
+                sendMessage("Update", tmp_id, "Node", "active", false);
         }
 
         if (this.hasSelectedConnector) {
             const tmp_id = this.currentID;
             var success = this.deleteConnector();
-            if (success & WEBSOCKET) sendMessage("Update", tmp_id, "Connector", "active", false);
-
+            if (success & WEBSOCKET)
+                sendMessage("Update", tmp_id, "Connector", "active", false);
         }
         this.draw();
     }
 
     addConnector(connector) {
         if (this.isConnectorIn(connector) == false) {
-
-            if(config.BidirectionalDefault){
+            if (config.BidirectionalDefault) {
                 connector.setBidirectional(true);
             }
 
             this.connectors.push(connector);
             console.log("Connector has been added.");
             return {
-                "success": true,
-                connector
+                success: true,
+                connector,
             };
         }
         var connector = this.findConnector(connector);
@@ -95,9 +92,12 @@ class Elements {
     }
 
     findConnector(connector) {
-        const connector1 = this.connectors.filter(elt =>
-            ((elt.target === connector.target && elt.source === connector.source) ||
-                (elt.target === connector.source && elt.source === connector.target))
+        const connector1 = this.connectors.filter(
+            (elt) =>
+                (elt.target === connector.target &&
+                    elt.source === connector.source) ||
+                (elt.target === connector.source &&
+                    elt.source === connector.target)
         );
         return connector1[0];
     }
@@ -112,12 +112,16 @@ class Elements {
         if (!this.currentConnector.getIsDeletable()) {
             console.log("This element cannot be deleted.");
 
-            toastr.info(languageFileOut.edw_01notDeleteConnector, languageFileOut.edw_02notDeleteConnector, {
-                closeButton: true,
-                timeOut: 2000,
-                positionClass: "toast-top-center",
-                preventDuplicates: true
-            })
+            toastr.info(
+                languageFileOut.edw_01notDeleteConnector,
+                languageFileOut.edw_02notDeleteConnector,
+                {
+                    closeButton: true,
+                    timeOut: 2000,
+                    positionClass: "toast-top-center",
+                    preventDuplicates: true,
+                }
+            );
             return false;
         }
         this.currentConnector.deleteConnection();
@@ -138,8 +142,8 @@ class Elements {
         this.nodes.push(node);
         console.log("Node has been added.");
         return {
-            "success": true,
-            node
+            success: true,
+            node,
         };
     }
 
@@ -149,17 +153,21 @@ class Elements {
         if (!this.currentNode.getIsDeletable()) {
             console.log("This element cannot be deleted.");
 
-            toastr.info(languageFileOut.edw_01notDeleteNode, languageFileOut.edw_02notDeleteNode, {
-                closeButton: true,
-                timeOut: 2000,
-                positionClass: "toast-top-center",
-                preventDuplicates: true
-            })
-            
+            toastr.info(
+                languageFileOut.edw_01notDeleteNode,
+                languageFileOut.edw_02notDeleteNode,
+                {
+                    closeButton: true,
+                    timeOut: 2000,
+                    positionClass: "toast-top-center",
+                    preventDuplicates: true,
+                }
+            );
+
             return false;
         }
 
-        this.connectors.forEach(connector => {
+        this.connectors.forEach((connector) => {
             if (connector.target === nodeID || connector.source === nodeID) {
                 connector.deleteConnection();
             }
@@ -172,8 +180,6 @@ class Elements {
         this.hasSelectedNode = false;
         return true;
     }
-
-
 
     getIndex(id, kind) {
         switch (kind) {
@@ -190,14 +196,19 @@ class Elements {
         return -1;
     }
 
-
-
-
     selecteNode(id) {
         const index = this.getIndex(id, "Node");
-        if (this.currentNode != null && this.nodes[index].id != this.currentNode.id) {
+        if (
+            this.currentNode != null &&
+            this.nodes[index].id != this.currentNode.id
+        ) {
             var connector = new ConnectorCAM();
-            connector.establishConnection(this.currentNode, this.nodes[index], IncreaseSliderIntensity, true);
+            connector.establishConnection(
+                this.currentNode,
+                this.nodes[index],
+                IncreaseSliderIntensity,
+                true
+            );
             this.addElement(connector);
             this.unselectNode();
             return;
@@ -211,8 +222,8 @@ class Elements {
 
     unselectNode() {
         this.nodes.map((node) => {
-            node.updateNode("selected", false)
-        })
+            node.updateNode("selected", false);
+        });
         this.currentNode = null;
         this.currentID = null;
         this.hasSelectedNode = false;
@@ -224,8 +235,6 @@ class Elements {
         }
         return null;
     }
-
-
 
     selectConnection(id) {
         const index = this.getIndex(id, "Connector");
@@ -239,11 +248,9 @@ class Elements {
 
         target.updateNode("connector", true);
         source.updateNode("connector", true);
-
     }
 
     unselectConnection() {
-
         const source = this.getNodeById(this.currentConnector.source);
         const target = this.getNodeById(this.currentConnector.target);
 
@@ -262,13 +269,18 @@ class Elements {
     }
 
     importElement(element) {
-
         console.log(element);
         if (element.kind === "Node") {
-            var node = new NodeCAM(0, "", {
-                x: 0,
-                y: 0
-            }, false, false);
+            var node = new NodeCAM(
+                0,
+                "",
+                {
+                    x: 0,
+                    y: 0,
+                },
+                false,
+                false
+            );
             node.setNodeImport(element);
             console.log("A node has been imported.");
             this.nodes.push(node);
@@ -278,7 +290,12 @@ class Elements {
             const source = this.getNodeById(element.source);
             const target = this.getNodeById(element.target);
             var connector = new ConnectorCAM();
-            connector.establishConnection(source, target, element.intensity, element.agreement);
+            connector.establishConnection(
+                source,
+                target,
+                element.intensity,
+                element.agreement
+            );
             connector.id = element.id;
             connector.isDeletable = element.isDeletable;
 

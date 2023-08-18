@@ -12,7 +12,7 @@ arrowRight.setAttribute("markerUnits", "userSpaceOnUse");
 let polyR = document.createElementNS(svgns, "polygon");
 if (config.hideArrows == true) {
     polyR.setAttribute("points", "0 0, 0 0, 0 0");
-}else{
+} else {
     polyR.setAttribute("points", "30 0, 30 15, 0 7.5");
 }
 
@@ -32,7 +32,7 @@ arrowLeft.setAttribute("markerUnits", "userSpaceOnUse");
 let polyL = document.createElementNS(svgns, "polygon");
 if (config.hideArrows == true) {
     polyL.setAttribute("points", "0 0, 0 0, 0 0");
-}else{
+} else {
     polyL.setAttribute("points", "0 0, 30 7.5, 0 15");
 }
 polyL.setAttribute("fill", "#8c8c8c");
