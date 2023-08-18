@@ -38,6 +38,7 @@ console.log(dataRaw.status)
     
     const queryString2 = window.location.search;
     const urlParams2 = new URLSearchParams(queryString2);
+    console.log('urlParams2: ', urlParams2);
     const link2 = urlParams2.get('link');
 
     
