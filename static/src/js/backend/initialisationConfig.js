@@ -1,16 +1,16 @@
-if(usingMangoDB){
+if (usingMangoDB) {
     async function fetchData(URL) {
         const dataRaw = await fetch(URL);
-        if(dataRaw.status != 200){
-console.log(dataRaw.status)
+        if (dataRaw.status != 200) {
+            console.log(dataRaw.status);
             return;
         }
 
         usingMangoDB = true;
-        const data = await dataRaw.json()
-    
+        const data = await dataRaw.json();
+
         config = JSON.parse(data.config);
-        console.log('config within: ', config)
+        console.log("config within: ", config);
         /*
         linkRedirect = data.link;
         token = data.token
@@ -33,12 +33,10 @@ console.log(dataRaw.status)
         });
         CAM.draw();
         */
-    
     }
-    
+
     const queryString2 = window.location.search;
     const urlParams2 = new URLSearchParams(queryString2);
-    console.log('urlParams2: ', urlParams2);
     const link2 = urlParams2.get('link');
 
     
@@ -46,7 +44,5 @@ console.log(dataRaw.status)
     
     fetchData(link2);
 
-    console.log('config outer: ', config)
+    console.log("config outer: ", config);
 }
-    
-    

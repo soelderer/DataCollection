@@ -6,7 +6,7 @@ target.innerHTML += buttonDelete;
 // language file
 $(function () {
     document.getElementById("deleteCAM").title = languageFileOut.btr_04; // buttons top right (btr)
-  });
+});
 
 function deleteCam() {
     let confirmdel = confirm(languageFileOut.confirmDeleting_01text);

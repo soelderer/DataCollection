@@ -1,9 +1,8 @@
 /**
-* Brief description of the class here
-* @extends ParentClassNameHereIfAny
-*/
+ * Brief description of the class here
+ * @extends ParentClassNameHereIfAny
+ */
 class ConnectorCAM {
-
     constructor(isDeletable = true) {
         this.id = uuid.v4(); // uuidv4.v4(); // to run "npm run test"
         this.value = null;
@@ -11,7 +10,7 @@ class ConnectorCAM {
         this.target = null;
         this.agreement = null; // shape of line
         this.isActive = null;
-        this.date = (new Date).getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
+        this.date = new Date().getTime(); // representing the milliseconds elapsed between 1 January 1970 00:00:00 UTC and the given date
         this.kind = "Connector"; // information for drawing edges / nodes
         this.isSelected = false;
         this.intensity = IncreaseSliderIntensity; // 3
@@ -54,17 +53,17 @@ class ConnectorCAM {
         this.agreement = val;
     }
 
-    setIsDeletable(val) { 
+    setIsDeletable(val) {
         this.isDeletable = val;
     }
 
-    setBidirectional(val) { 
+    setBidirectional(val) {
         this.isBidirectional = val;
     }
 
-    setDirectional() { 
+    setDirectional() {
         this.isBidirectional = false;
-        
+
         const tmp_source = this.source;
         this.source = this.target;
         this.target = tmp_source;
@@ -87,7 +86,7 @@ class ConnectorCAM {
     updateConnector(field, value) {
         this.enterLog({
             type: field,
-            value: value
+            value: value,
         });
         if (field === "value") this.setValue(value);
         if (field === "active") this.setIsActive(value);
@@ -97,16 +96,16 @@ class ConnectorCAM {
         if (field === "direction") this.setDirectional();
     }
 
-    /** 
-    * This function establishes a connection between a source and a target with a given intensity and agreement value.
-    * @param {Node} source - Node corresponding to the source.
-    * @param {Node} target - Node corresponding to the target.
-    * @param {int} intensity - Intensity of the connection.
-    * @param {boolean} agreement - Is the connection an agreement.
-    */
+    /**
+     * This function establishes a connection between a source and a target with a given intensity and agreement value.
+     * @param {Node} source - Node corresponding to the source.
+     * @param {Node} target - Node corresponding to the target.
+     * @param {int} intensity - Intensity of the connection.
+     * @param {boolean} agreement - Is the connection an agreement.
+     */
     establishConnection(source, target, intensity, agreement) {
         this.agreement = agreement;
-        this.date = (new Date).getTime();
+        this.date = new Date().getTime();
         this.source = source.id;
         this.target = target.id;
         this.isActive = true;
@@ -116,38 +115,35 @@ class ConnectorCAM {
 
         this.enterLog({
             type: "create connection",
-            value: null
+            value: null,
         });
     }
 
-      
-    makeBidirectionalConnection(){
+    makeBidirectionalConnection() {
         this.enterLog({
             type: "create bidirectional connection",
-            value: null
+            value: null,
         });
         this.isBidirectional = true;
     }
 
-    makeUnidirectionalConnection(){
-
+    makeUnidirectionalConnection() {
         this.enterLog({
             type: "create unidirectional connection",
-            value: null
+            value: null,
         });
 
         this.isBidirectional = false;
-        
+
         const tmp_source = this.source;
         this.source = this.target;
         this.target = tmp_source;
     }
 
-
     deleteConnection() {
         this.enterLog({
             type: "active",
-            value: false
+            value: false,
         });
 
         this.isActive = false;
@@ -155,14 +151,11 @@ class ConnectorCAM {
         return true;
     }
 
-
     enterLog(log) {
         this.eventLog.push({
-            time: (new Date).getTime(),
+            time: new Date().getTime(),
             type: log.type,
-            value: log.value
+            value: log.value,
         });
     }
-
-
 }

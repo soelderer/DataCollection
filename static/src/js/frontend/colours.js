@@ -1,14 +1,11 @@
 /* variables front end */
 // colors for highlighting selected elements
 
-
 // Text elements
 const TEXT = {
     colour: "black",
-    size: "20px"
+    size: "20px",
 };
-
-
 
 const COLOUR = {
     background: "white",
@@ -33,4 +30,4 @@ const COLOUR = {
     green2: "hsl(110, 100%, 50%)",
     green1: "hsl(110, 100%, 40%)",
     white: "hsl(255, 100%, 100%)",
-}
+};

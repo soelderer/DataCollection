@@ -3,12 +3,10 @@ const downloadJSONButton = `<button class="material-icons" onclick="onDownloadCA
 var target = document.getElementById("hideResearcherButtonsTop");
 target.innerHTML += downloadJSONButton;
 
-
-
 function downloadCAMdata(content, fileName, contentType) {
     const a = document.createElement("a");
     const file = new Blob([content], {
-        type: contentType
+        type: contentType,
     });
     a.href = URL.createObjectURL(file);
     a.download = fileName;
@@ -17,7 +15,11 @@ function downloadCAMdata(content, fileName, contentType) {
 
 function onDownloadCAMdata() {
     console.log("CAM data has been saved");
-    downloadCAMdata(JSON.stringify(CAM), "CAMdataJSON-" + CAM.idCAM + ".txt", "text/plain");
+    downloadCAMdata(
+        JSON.stringify(CAM),
+        "CAMdataJSON-" + CAM.idCAM + ".txt",
+        "text/plain"
+    );
 
-    toastr.info('You can save your CAM as a data file (JSON file).');
+    toastr.info("You can save your CAM as a data file (JSON file).");
 }
