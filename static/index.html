@@ -190,25 +190,25 @@ crossorigin="anonymous"
   </div>
 
   <!-- Config files: -->
-  <script src="./config/configfile.js" crossorigin="anonymous"></script>
+  <script src="./config/configfile.js" crossorigin="anonymous" defer></script>
   <!-- URL parameters -->
   <script
     src="./src/js/processing/featureStudies(URLparams).js"
     crossorigin="anonymous"
-  ></script>
+    defer></script>
   <!-- overwrite config if CAMEL administrative panel was used -->
   <script
     src="./src/js/backend/initialisationConfig.js"
     crossorigin="anonymous"
-  ></script>
+    defer></script>
 
   <script
     src=" ./src/js/frontend/paradata_focus.js"
     crossorigin="anonymous"
-  ></script>
+    defer></script>
 
      <!-- language file -->
-     <script src="./config/languageFile.js" crossorigin="anonymous"></script>
+     <script src="./config/languageFile.js" crossorigin="anonymous" defer></script>
 
   <script>
     var delay = (function () {
@@ -382,11 +382,10 @@ crossorigin="anonymous"
         script.async = true;
         document.head.appendChild(script);
       })();
-    }, 800); // end delay
-    }, 500); // end delay
+    }, 300); // end delay
+    }, 700); // end delay
 
 
-    
   </script>
   
 </html>

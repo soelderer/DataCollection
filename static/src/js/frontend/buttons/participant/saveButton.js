@@ -195,6 +195,8 @@ function saveCAMsuccess() {
                     info
                 );
 
+
+
                 if (res.status == 201) {
                     window.location =
                         linkRedirect +
