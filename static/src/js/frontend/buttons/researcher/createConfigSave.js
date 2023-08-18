@@ -16,10 +16,10 @@ const interactionSetUpStudy = `
         </div>
         <div class="row" style="background-color:#aaa;">
             <div class="column1">
-                Number of nodes necessary to draw (about 20 recommended):
+                Number of nodes necessary to draw (about 10 recommended):
             </div>
             <div class="column2">
-            <input type="number" id="setConNumNodes" min="1" max="50" style="width: 60%; margin-top: 14px;" value="20">
+            <input type="number" id="setConNumNodes" min="1" max="50" style="width: 60%; margin-top: 14px;" value="10">
             </div>
         </div>
         <div class="row" style="background-color:#bababa;">
