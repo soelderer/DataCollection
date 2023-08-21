@@ -11,6 +11,10 @@ if (usingMangoDB) {
 
         config = JSON.parse(data.config);
         console.log("config within: ", config);
+
+        if(config.fullScreen || usingMangoDB){
+          // enterFullscreen(); // start fullscreen
+        }
         /*
         linkRedirect = data.link;
         token = data.token

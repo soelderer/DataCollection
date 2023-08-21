@@ -1,4 +1,6 @@
-if (config.fullScreen == true) {
+console.log("starting paradata")
+
+if (config.fullScreen == true || usingMangoDB) { // else to late loaded
     var paradefocuscount = 0;
     var arraydefocusevent = [];
     var lastBlurTimestamp;

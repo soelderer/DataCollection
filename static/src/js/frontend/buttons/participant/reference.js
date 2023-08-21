@@ -111,6 +111,13 @@ const ref = `
 var target = document.getElementById("dialogReference");
 target.innerHTML += ref;
 
+
+// language file
+$(function () {
+    document.getElementById("dialogReference").title = languageFileOut.qr_top; // title
+    document.getElementById("quickref").title = languageFileOut.btr_01; // buttons top right (btr)
+});
+
 $(function () {
     if (config.cameraFeature) {
         $("#showCameraFeature").show();

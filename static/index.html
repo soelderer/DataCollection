@@ -153,22 +153,6 @@ crossorigin="anonymous"
 
 
 
-  <script>
-    $(function () {
-    document.getElementById("alert-text").innerHTML = languageFileOut.ls_01; // leaving fullscreen
-
-    document.getElementById("dialogReference").title = languageFileOut.qr_top; // Quick reference
-
-    document.getElementById("quickref").title = languageFileOut.btr_01; // buttons top right (btr)
-
-    document.getElementById("dialogConfirmSave").title =   languageFileOut.confirmSaving_01_title; // languageFileOut.qr_top; // Quick reference
-    
-    document.getElementById("alert-button-text").innerText =   languageFileOut.continueButtonFullscreen; // fullscreen continue button
-  })
-  </script>
-
-
-
   <!-- defocus div element: -->
   <div id="alert" style="background: white; visibility: hidden" class="content">
     <div style="text-align: center;">
@@ -202,13 +186,12 @@ crossorigin="anonymous"
     crossorigin="anonymous"
     defer></script>
 
-  <script
-    src=" ./src/js/frontend/paradata_focus.js"
-    crossorigin="anonymous"
-    defer></script>
-
+     <!-- paradata file -->
+     <script
+     src="./src/js/frontend/paradata_focus.js"
+     crossorigin="anonymous"
+     defer></script>
      <!-- language file -->
-     <script src="./config/languageFile.js" crossorigin="anonymous" defer></script>
 
   <script>
     var delay = (function () {
@@ -220,6 +203,21 @@ crossorigin="anonymous"
     })();
 
     delay(function () {
+             // processing files
+             (function () {
+        const script = document.createElement("script");
+        script.src = "./config/languageFile.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+
+      (function () {
+        const script = document.createElement("script");
+        script.src = "./src/js/frontend/paradata_focus_text.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+
        // processing files
       (function () {
         const script = document.createElement("script");

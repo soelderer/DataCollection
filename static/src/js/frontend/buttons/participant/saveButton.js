@@ -6,7 +6,11 @@ target.innerHTML += saveButton;
 // language file
 $(function () {
     document.getElementById("saveCAM").title = languageFileOut.btr_02; // buttons top right (btr)
+
+    document.getElementById("dialogConfirmSave").title =   languageFileOut.confirmSaving_01_title; // title confirm saving
+
 });
+
 
 function updateQueryStringParameter(uri, key, value) {
     var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
@@ -189,6 +193,8 @@ function saveCAMsuccess() {
                         "Content-Type": "application/json",
                     },
                 };
+
+                console.log("info", info)
 
                 const res = await fetch(
                     webAddress + "/participants/addExperience",
