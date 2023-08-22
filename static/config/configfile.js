@@ -35,9 +35,10 @@ var config = {
 // global variable
 var usingMangoDB = true;
 var usingJATOS = false;
+/* MAKE CHANGES: end*/
 
 console.log("config config file:", config)
-/* MAKE CHANGES: end*/
+
 
 
 
