@@ -7,7 +7,7 @@ target.innerHTML += saveButton;
 $(function () {
     document.getElementById("saveCAM").title = languageFileOut.btr_02; // buttons top right (btr)
 
-    document.getElementById("dialogConfirmSave").title =   languageFileOut.confirmSaving_01_title; // title confirm saving
+    document.getElementById("dialogConfirmSave").title = languageFileOut.confirmSaving_01_title; // title confirm saving
 
 });
 
@@ -52,8 +52,8 @@ function saveCam() {
         toastr.warning(
             languageFileOut.popSave_01numNodes,
             languageFileOut.popSave_02numNodes +
-                config.ConNumNodes +
-                languageFileOut.popSave_03numNodes,
+            config.ConNumNodes +
+            languageFileOut.popSave_03numNodes,
             {
                 closeButton: true,
                 timeOut: 2000,
@@ -93,9 +93,9 @@ function saveCam() {
             toastr.warning(
                 languageFileOut.popSave_01unconnectedB,
                 languageFileOut.popSave_02unconnectedB +
-                    " " +
-                    ResbfsAl +
-                    languageFileOut.popSave_03unconnectedB,
+                " " +
+                ResbfsAl +
+                languageFileOut.popSave_03unconnectedB,
                 {
                     closeButton: true,
                     timeOut: 2000,
@@ -201,13 +201,18 @@ function saveCAMsuccess() {
                     info
                 );
 
+
+
                 if (res.status == 201) {
                     window.location =
                         linkRedirect +
-                        "&jwt=" +
-                        token +
-                        "&participantID=" +
+                        "?participantID=" +
                         CAM.creator;
+
+/*
+"?jwt=" +
+token +
+*/
                 }
             }
             pushData();
