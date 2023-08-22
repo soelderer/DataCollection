@@ -187,6 +187,18 @@ crossorigin="anonymous"
     defer></script>
 
      <!-- paradata file -->
+     <script>
+$(function () {
+  if(!usingMangoDB){
+        (function () {
+        const script = document.createElement("script");
+        script.src = "./src/js/frontend/paradata_focus.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+      }
+});
+     </script>
 
      <!-- language file -->
 
@@ -200,12 +212,14 @@ crossorigin="anonymous"
     })();
 
     delay(function () {
+      if(usingMangoDB){
       (function () {
         const script = document.createElement("script");
         script.src = "./src/js/frontend/paradata_focus.js";
         script.async = false;
         document.head.appendChild(script);
       })();
+      }
 
              // processing files
              (function () {

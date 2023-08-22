@@ -217,9 +217,9 @@ function setConfigCAMfile() {
     }
 
     if ($("#setBidirectionalDefault").is(":checked")) {
-        setCAMConfig.config.BidirectionalDefault = false;
-    } else {
         setCAMConfig.config.BidirectionalDefault = true;
+    } else {
+        setCAMConfig.config.BidirectionalDefault = false;
     }
 
     if ($("#sethideAmbivalent").is(":checked")) {
