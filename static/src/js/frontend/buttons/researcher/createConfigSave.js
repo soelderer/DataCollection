@@ -74,7 +74,7 @@ const interactionSetUpStudy = `
             </div>
             <div class="column2">
                 <label class="switch" style="margin-top: 8px;">
-                <input type="checkbox" id="setshowOnlyPosSlid" checked>
+                <input type="checkbox" id="setshowOnlyPosSlid">
                 <div class="slider round">
                 </div>
                 </label>
@@ -229,9 +229,9 @@ function setConfigCAMfile() {
     }
 
     if ($("#setshowOnlyPosSlid").is(":checked")) {
-        setCAMConfig.config.showOnlyPosSlid = false;
-    } else {
         setCAMConfig.config.showOnlyPosSlid = true;
+    } else {
+        setCAMConfig.config.showOnlyPosSlid = false;
     }
 
     if ($("#setcameraFeature").is(":checked")) {

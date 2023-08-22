@@ -187,10 +187,7 @@ crossorigin="anonymous"
     defer></script>
 
      <!-- paradata file -->
-     <script
-     src="./src/js/frontend/paradata_focus.js"
-     crossorigin="anonymous"
-     defer></script>
+
      <!-- language file -->
 
   <script>
@@ -203,6 +200,13 @@ crossorigin="anonymous"
     })();
 
     delay(function () {
+      (function () {
+        const script = document.createElement("script");
+        script.src = "./src/js/frontend/paradata_focus.js";
+        script.async = false;
+        document.head.appendChild(script);
+      })();
+
              // processing files
              (function () {
         const script = document.createElement("script");
@@ -382,8 +386,6 @@ crossorigin="anonymous"
       })();
     }, 300); // end delay
     }, 700); // end delay
-
-
   </script>
   
 </html>
