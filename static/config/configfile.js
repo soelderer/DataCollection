@@ -1,3 +1,4 @@
+/* MAKE CHANGES: start*/
 /* default values */
 var config = {
     CAMproject: "projectName", // "proj_" + uuid.v4(), // necessary for server (see ERM)
@@ -36,6 +37,9 @@ var usingMangoDB = true;
 var usingJATOS = false;
 
 console.log("config config file:", config)
+/* MAKE CHANGES: end*/
+
+
 
 
 // ! not change

@@ -15,49 +15,42 @@ function shuffle(queslist) {
     return array_emp;
   }
 
-const ConceptsCAM = ["Vorteile", "Nachteile"];
-
+const ConceptsCAM = ["A1", "A2"];
 const index_ConceptsCAM = shuffle(ConceptsCAM);
 console.log("index_ConceptsCAM:", index_ConceptsCAM);
  */
 
 function defaultCAM() {
+  if (!usingMangoDB) {
+    /* MAKE CHANGES: start*/
+
     CAM.addElement(new NodeCAM(0, "central (change me!)", {
-        x: 600,
-        y: 400
+      x: 600,
+      y: 400
     }, true, true, true));
 
 
-    /*
-    var connector = new ConnectorCAM();
-    connector.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, false);
-    CAM.addElement(connector);
-    CAM.connectors[0].isDeletable = false;
 
 
-    CAM.addElement(new NodeCAM(0, ConceptsCAM[index_ConceptsCAM[0]], {
-      x: 450,
-      y: 400
-  }, false, false, false));
+    /* MAKE Changes: end*/
+  } else {
+    // add nodes from fetched data
+    camMother.nodes.forEach((element) => {
+      element.kind = "Node";
+      element.comment = "";
+      element.eventLog = [];
+      element.isActive = true;
+      element.isConnectorSelected = false;
+      element.isSelected = false;
+      CAM.importElement(element);
+    });
+    // add connectors from fetched data
+    camMother.connectors.forEach((element) => {
+      element.kind = "Connector";
+      element.eventLog = "";
+      CAM.importElement(element);
+    });
+  }
 
-
-  CAM.addElement(new NodeCAM(0, ConceptsCAM[index_ConceptsCAM[1]], {
-    x: 750,
-    y: 400
-}, false, false, false));
-
-
-var connector = new ConnectorCAM();
-connector.establishConnection(CAM.nodes[0], CAM.nodes[1], IncreaseSliderIntensity, true);
-CAM.addElement(connector);
-CAM.connectors[0].isDeletable = false;
-
-var connector = new ConnectorCAM();
-connector.establishConnection(CAM.nodes[0], CAM.nodes[2], IncreaseSliderIntensity, true);
-CAM.addElement(connector);
-CAM.connectors[1].isDeletable = false;
-*/ 
-
-
-CAM.draw();
+  CAM.draw();
 }

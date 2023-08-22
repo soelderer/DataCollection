@@ -189,15 +189,15 @@ function saveCAMsuccess() {
                         cam: CAM,
                     }),
                     headers: {
-                        Accept: "application/json",
-                        "Content-Type": "application/json",
+                        'Accept': "application/json",
+                        'Content-Type': "application/json",
                     },
                 };
 
-                console.log("info", info)
+                // console.log("info", info)
 
                 const res = await fetch(
-                    webAddress + "/participants/addExperience",
+                    webAddress + "/participants/submitExperiment",
                     info
                 );
 
