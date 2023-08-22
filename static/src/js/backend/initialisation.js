@@ -26,10 +26,17 @@ if (usingMangoDB) {
         });
 
         camMother.connectors.forEach((element) => {
+            console.log("element - init.js", element)
             element.kind = "Connector";
             element.eventLog = "";
             CAM.importElement(element);
         });
+
+        for(i=0; i < CAM.connectors.length; i++){
+            CAM.connectors[i].agreement = camMother.connectors[i].agreement
+            CAM.connectors[i].isBidirectional = camMother.connectors[i].isBidirectional
+            CAM.connectors[i].isDeletable = camMother.connectors[i].isDeletable
+        }
         CAM.draw();
     }
 
