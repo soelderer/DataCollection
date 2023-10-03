@@ -623,7 +623,7 @@ const languageFile_european = [
     {
         "X_identifier": "qr_legend_22",
         "X_location": "quick reference",
-        "english": "Concepts inhibit each other",
+        "english": "Concepts oppose each other",
         "german": "Konzepte hemmen einander",
         "french": "Les concepts s'inhibent mutuellement",
         "spanish": "Los conceptos se inhiben mutualmente"
@@ -943,7 +943,7 @@ const languageFile_european = [
     {
         "X_identifier": "cd_02",
         "X_location": "connector dialog (cd)",
-        "english": "Inhibition",
+        "english": "Opposing",
         "german": "Hemmung",
         "french": "Inhibition",
         "spanish": "Inhibición"
@@ -951,7 +951,7 @@ const languageFile_european = [
     {
         "X_identifier": "cd_03",
         "X_location": "connector dialog (cd)",
-        "english": "Support",
+        "english": "Supporting",
         "german": "Verstärkung",
         "french": "Renforcement",
         "spanish": "Reforzamiento"
@@ -1245,7 +1245,6 @@ const languageFile_european = [
         "spanish": "haga clic para continuar"
     }
 ];
-
 
 
 
