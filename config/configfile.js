@@ -44,6 +44,6 @@ console.log("config config file:", config)
 
 
 // ! not change
-const webAddress = "http://localhost:3001"; 
+const webAddress = "https://drawyourminds.de/API/"; // "http://localhost:3001"; 
 
 
