@@ -944,7 +944,7 @@ const languageFile_european = [
         "X_identifier": "cd_02",
         "X_location": "connector dialog (cd)",
         "english": "Opposing",
-        "german": "Hemmung",
+        "german": "Hemmend",
         "french": "Inhibition",
         "spanish": "Inhibición"
     },
@@ -952,7 +952,7 @@ const languageFile_european = [
         "X_identifier": "cd_03",
         "X_location": "connector dialog (cd)",
         "english": "Supporting",
-        "german": "Verstärkung",
+        "german": "Verstärkend",
         "french": "Renforcement",
         "spanish": "Reforzamiento"
     },
