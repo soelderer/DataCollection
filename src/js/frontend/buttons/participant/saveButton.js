@@ -197,7 +197,7 @@ function saveCAMsuccess() {
                 // console.log("info", info)
 
                 const res = await fetch(
-                    webAddress + "/participants/submitExperiment",
+                    webAddress + "participants/submitExperiment",
                     info
                 );
 
