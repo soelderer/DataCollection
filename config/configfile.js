@@ -33,7 +33,7 @@ var config = {
 }
 
 // global variable
-var usingMangoDB = true;
+var usingMangoDB = false;
 var usingJATOS = false;
 /* MAKE CHANGES: end*/
 
@@ -44,6 +44,6 @@ console.log("config config file:", config)
 
 
 // ! not change
-const webAddress = "https://drawyourminds.de/API/"; // "http://localhost:3001"; 
+const webAddress = "https://drawyourminds.de/API/"; // "https://drawyourminds.de/API/"; // "http://localhost:3001/"; 
 
 
