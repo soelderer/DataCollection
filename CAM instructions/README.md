@@ -10,6 +10,7 @@ Currently presentations in a short / long version for **English, German** can be
 
 * "CAMEL_Instrunctions_EN_long": English CAMEL instructions for the following configuration: ambivalent concepts, positive / negative for connection ([-3, 3]), arrows
 * "CAMEL_Instrunctions_EN_noArrows_long": English CAMEL instructions for the following configuration: ambivalent concepts, positive / negative for connection ([-3, 3]); <b>no</b> arrows
+* "CAMEL_Instrunctions_DE_noArrows_long": German CAMEL instructions for the following configuration: ambivalent concepts, positive / negative for connection ([-3, 3]); <b>no</b> arrows
 * "CAMEL_Instrunctions_DE_long": German CAMEL instructions for the following configuration: ambivalent concepts, positive / negative for connection ([-3, 3]), arrows
 
 
