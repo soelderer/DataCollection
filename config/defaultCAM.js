@@ -29,6 +29,35 @@ function defaultCAM() {
       y: 400
     }, true, true, true));
 
+    CAM.addElement(new NodeCAM(-1, "11", {
+      x: 100,
+      y: 300
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(-2, "22", {
+      x: 200,
+      y: 300
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(-3, "33", {
+      x: 300,
+      y: 300
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(1, "11", {
+      x: 300,
+      y: 400
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(2, "22", {
+      x: 400,
+      y: 400
+    }, true, true, true));
+
+    CAM.addElement(new NodeCAM(3, "33", {
+      x: 500,
+      y: 400
+    }, true, true, true));
 
 
 
