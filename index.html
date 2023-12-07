@@ -385,12 +385,6 @@ $(function () {
         script.async = false;
         document.head.appendChild(script);
       })();
-      (function () {
-        const script = document.createElement("script");
-        script.src = "./src/js/backend/initialisation.js";
-        script.async = true;
-        document.head.appendChild(script);
-      })();
 
       (function () {
         const script = document.createElement("script");
@@ -398,8 +392,17 @@ $(function () {
         script.async = true;
         document.head.appendChild(script);
       })();
-    }, 300); // end delay
+
+      delay(function () {
+        (function () {
+        const script = document.createElement("script");
+        script.src = "./src/js/backend/initialisation.js";
+        script.async = true;
+        document.head.appendChild(script);
+      })();
+      }, 200); // end delay
     }, 700); // end delay
+    }, 300); // end delay
   </script>
   
 </html>
