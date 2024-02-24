@@ -18,11 +18,21 @@ class ConnectorCAM {
         this.isOver = false;
         this.isBidirectional = true;
         this.eventLog = [];
+        this.text = "";
     }
 
     setValue(newValue) {
         this.value = newValue;
     }
+
+    setText(newText) {
+        this.text = newText;
+    }
+
+    getText() {
+        return this.text;
+    }
+
     getIntensity() {
         return this.intensity;
     }
@@ -94,6 +104,7 @@ class ConnectorCAM {
         if (field === "agreement") this.setAgreement(value);
         if (field === "bidirection") this.setBidirectional(value);
         if (field === "direction") this.setDirectional();
+        if (field === "text") this.setText(value);
     }
 
     /**

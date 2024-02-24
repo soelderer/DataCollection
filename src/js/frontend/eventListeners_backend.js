@@ -187,6 +187,11 @@ $(document).on("mousedown", ".connector, .outer-connector", function (event) {
             );
             var backendRedColorTick = document.querySelector(".redColorTick");
 
+
+            // get text of current connector
+            document.getElementById("inptextconnector").value =
+                CAM.currentConnector.getText();
+
             if (CAM.currentConnector.agreement) {
                 backendRedColorSlider.style.backgroundColor = "white";
                 backendRedColorTick.style.backgroundColor = "white";

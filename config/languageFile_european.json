@@ -456,6 +456,14 @@
         "spanish": "Borrar conexión"
     },
     {
+        "X_identifier": "cd_08",
+        "X_location": "connector dialog (cd)",
+        "english": "Label",
+        "german": "Label",
+        "french": "Label",
+        "spanish": "Etiqueta"
+    },
+    {
         "X_identifier": "popSave_01emptyNodes",
         "X_location": "popup save button (popSave)",
         "english": "Please return to your Cognitive-Affective Map and add text to the empty concepts.",

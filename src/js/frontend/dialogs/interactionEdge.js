@@ -51,6 +51,14 @@ const interactionEdge = `
             </div>
 
 
+            <!-- > adjust text -->
+            <div class="properties-align">
+                <div class="properties-size-naming">
+                ${languageFileOut.cd_08}
+                </div>
+                <input id="inptextconnector" type="text"
+                    style="width: 99%; text-align: left;   margin: auto; display: block;" autofocus>
+            </div>
 
 
             <!-- > adjust of connectivity of edge -->
@@ -118,6 +126,51 @@ $(function () {
     }
 
 
+    $('#inptextconnector').on("input", function () {
+        var MaxLengthWords = config.MaxLengthWords; // allow not more than X words
+        var MaxLengthChars = config.MaxLengthChars; // allow not more than X characters
+
+        // console.log("CAM.currentNode.isTextChangeable:", CAM.currentNode.isTextChangeable)
+
+        // needs to be implemented
+        //if(CAM.currentNode.isTextChangeable){
+            var numWords = this.value.split(' ').filter(word => word != "");
+            numWords = numWords.length;
+            // console.log("length chars: ", this.value.length, this.value.length <= MaxLengthChars);
+            // console.log("numWords: ", numWords, numWords <= MaxLengthWords);
+
+            if (numWords <= MaxLengthWords && this.value.length <= MaxLengthChars) {
+                //console.log("show me:", this.value);
+                CAM.updateElement("Connector", "text", this.value);
+                CAM.draw();
+            } else if (numWords > MaxLengthWords) {
+                toastr.warning(languageFileOut.ndw_01tooManyWords, languageFileOut.ndw_02tooManyWords + MaxLengthWords + languageFileOut.ndw_03tooManyWords, {
+                    closeButton: true,
+                    timeOut: 2000,
+                    positionClass: "toast-top-center",
+                    preventDuplicates: true
+                })
+
+
+                // alert("Please do not use more than " + MaxLengthWords + " words for a single node!\nInstead, please draw several connected nodes.");
+            } else if (this.value.length > MaxLengthChars) {
+                toastr.warning(languageFileOut.ndw_01tooManyWords, languageFileOut.ndw_02tooManyWords + MaxLengthChars + languageFileOut.ndw_03tooManyWordsA, {
+                    closeButton: true,
+                    timeOut: 2000,
+                    positionClass: "toast-top-center",
+                    preventDuplicates: true
+                })
+            }
+        //}else{
+        //    toastr.info(languageFileOut.ndw_01predefinedConcept, languageFileOut.ndw_02predefinedConcept, {
+        //        closeButton: true,
+        //        timeOut: 2000,
+        //        positionClass: "toast-top-center",
+        //        preventDuplicates: true
+        //    })
+        //}
+
+    });
 
 
     $('#edgeSlider').on("input", function () {

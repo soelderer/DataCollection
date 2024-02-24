@@ -342,6 +342,14 @@ const languageFile_chinese = [
         "chinese": "删除联系"
     },
     {
+        "X_identifier": "cd_08",
+        "X_location": "connector dialog (cd)",
+        "english": "Label",
+        "german": "Label",
+        "french": "Label",
+        "spanish": "Etiqueta"
+    },
+    {
         "X_identifier": "popSave_01emptyNodes",
         "X_location": "popup save button (popSave)",
         "english": "Please return to your Cognitive-Affective Map and add text to the empty concepts.",
@@ -987,6 +995,14 @@ const languageFile_european = [
         "german": "Verbindung löschen",
         "french": "Supprimer le lien",
         "spanish": "Borrar conexión"
+    },
+    {
+        "X_identifier": "cd_08",
+        "X_location": "connector dialog (cd)",
+        "english": "Label",
+        "german": "Label",
+        "french": "Label",
+        "spanish": "Etiqueta"
     },
     {
         "X_identifier": "popSave_01emptyNodes",

@@ -87,6 +87,8 @@ function getTextSVG(node) {
     nodeText.setAttribute("text-anchor", "middle");
     nodeText.setAttribute("font-size", TEXT.size);
 
+
+
     if (node.text.length >= config.LengthSentence) {
         const cumulativeSum = (
             (sum) => (value) =>
@@ -461,6 +463,7 @@ function drawConnector(connector, mother, daughter) {
         compensation
     );
     group.appendChild(outer);
+    group.appendChild(getTextSVG(connector));
 
     //const drawCross = this.drawCross(connector, motherD, position, angle, dist, compensation, mother, daughter);
     //group.appendChild(drawCross);
