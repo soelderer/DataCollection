@@ -120,6 +120,67 @@ function getTextSVG(node) {
     return nodeText;
 }
 
+
+function getConnectorLabelSVG(connector, position) {
+    source = CAM.getNodeById(connector.source)
+    target = CAM.getNodeById(connector.target)
+
+    label_position = {
+        x: source.position.x - 0.5 * (source.position.x - target.position.x),
+        y: source.position.y - 0.5 * (source.position.y - target.position.y)
+    };
+
+    let connectorText = document.createElementNS(svgns, "text");
+    connectorText.setAttribute("id", connector.id);
+    connectorText.setAttribute("class", "noselect connector");
+    connectorText.setAttribute("x", label_position.x);
+    connectorText.setAttribute("y", label_position.y);
+    connectorText.setAttribute("fill", TEXT.colour);
+    connectorText.setAttribute("alignment-baseline", "center");
+    connectorText.setAttribute("text-anchor", "middle");
+
+    // TODO: fix this with transform(). for now lets reduce the font size manually ...
+    connectorText.setAttribute("font-size", "10px");
+    // connectorText.setAttribute("font-size", TEXT.size);
+    //connectorText.setAttribute(
+    //    "transform",
+    //    // at some time we should change it to zoomScaleConnector if this is important
+    //    //`translate(${label_position.x},${label_position.y}) scale(${zoomScaleNode})`
+    //    `scale(${zoomScaleNode})`
+    //);
+
+
+    if (connector.text.length >= config.LengthSentence) {
+        const cumulativeSum = (
+            (sum) => (value) =>
+                (sum += value)
+        )(0);
+        var LengthCumWords = config.LengthWords;
+        var LengthText = [];
+        var ArrayText = connector.text.split(" ");
+
+        ArrayText.forEach((element) => LengthText.push(element.length));
+
+        LengthText = LengthText.map(cumulativeSum);
+
+        for (var i = 0; i <= LengthText.length; i++) {
+            if (LengthText[i] > LengthCumWords) {
+                ArrayText[i] =
+                    " <tspan dy='1.1em' x='0'>" + ArrayText[i] + "</tspan>";
+                LengthCumWords += config.LengthWords;
+            }
+        }
+
+        // connectorText.setAttribute("y", -20);
+
+        connectorText.innerHTML = ArrayText.join(" ");
+    } else {
+        connectorText.innerHTML = connector.text;
+        // connectorText.setAttribute("y", 0);
+    }
+    return connectorText;
+}
+
 function drawPositiveNode(node) {
     let positiveNode = document.createElementNS(svgns, "ellipse");
     positiveNode.setAttribute("id", node.id);
@@ -463,7 +524,7 @@ function drawConnector(connector, mother, daughter) {
         compensation
     );
     group.appendChild(outer);
-    group.appendChild(getTextSVG(connector));
+    group.appendChild(getConnectorLabelSVG(connector, position));
 
     //const drawCross = this.drawCross(connector, motherD, position, angle, dist, compensation, mother, daughter);
     //group.appendChild(drawCross);
