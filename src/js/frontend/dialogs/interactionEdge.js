@@ -51,8 +51,7 @@ const interactionEdge = `
             </div>
 
 
-            <!-- > adjust text -->
-            <div class="properties-align">
+            <div class="properties-align" id="hideConnectorLabelInput">
                 <div class="properties-size-naming">
                 ${languageFileOut.cd_08}
                 </div>
@@ -123,6 +122,13 @@ $(function () {
     }else{
         $('#hideSliderDisAgree').show();
         $('#hideSliderAgreementOnly').hide();
+    }
+    if(config.enableConnectorLabels){
+        $('#hideConnectorLabelInput').show()
+        console.log("not here!!")
+    } else{
+        $('#hideConnectorLabelInput').hide()
+        console.log("here!!")
     }
 
 

@@ -29,7 +29,10 @@ var config = {
 
     setReminder: false, // if true = after X ms 2 reminder pop up
 
-    surpressSaveCAMpopup: false // if set to true no popup is shown when downloading a vector graphic of the CAM (for automation via the CAM2Image tool)
+    surpressSaveCAMpopup: false, // if set to true no popup is shown when downloading a vector graphic of the CAM (for automation via the CAM2Image tool)
+
+    // enableConnectorLabels: false // if true, edges can be labeled with arbitrary text
+    enableConnectorLabels: true, // if true, edges can be labeled with arbitrary text
 }
 
 // global variable
