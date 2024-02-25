@@ -2,6 +2,18 @@ function draw(CAM) {
     const board = document.querySelector("#CAMSVG");
     board.innerHTML = "";
 
+    // filter is used to improve readability of connector labels
+    defs = document.createElementNS(svgns, "defs")
+    defs.innerHTML = `<filter x="0" y="0" width="1" height="1" id="filterLabel">
+      <feFlood flood-color="` + COLOUR.background + ` " result="bg" />
+      <feMerge>
+        <feMergeNode in="bg"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>`
+
+    board.appendChild(defs)
+
     board.appendChild(this.drawBackground());
 
     board.appendChild(arrowRight);
@@ -138,6 +150,7 @@ function getConnectorLabelSVG(connector, position) {
     connectorText.setAttribute("fill", TEXT.colour);
     connectorText.setAttribute("alignment-baseline", "center");
     connectorText.setAttribute("text-anchor", "middle");
+    connectorText.setAttribute("filter", "url(#filterLabel)");
 
     // TODO: fix this with transform(). for now lets reduce the font size manually ...
     connectorText.setAttribute("font-size", "10px");
