@@ -125,10 +125,8 @@ $(function () {
     }
     if(config.enableConnectorLabels){
         $('#hideConnectorLabelInput').show()
-        console.log("not here!!")
     } else{
         $('#hideConnectorLabelInput').hide()
-        console.log("here!!")
     }
 
 

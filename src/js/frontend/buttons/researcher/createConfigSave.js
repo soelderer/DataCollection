@@ -93,8 +93,21 @@ const interactionSetUpStudy = `
                 </label>
             </div>
         </div>
-        
+
         <div class="row" style="background-color:#bababa;">
+            <div class="column1">
+                Possibility to label connections:
+            </div>
+            <div class="column2">
+                <label class="switch" style="margin-top: 8px;">
+                <input type="checkbox" id="setEnableConnectorLabels">
+                <div class="slider round">
+                </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#aaa;">
             <div class="column1">
                 Include splotlight feature to move screen (only recommended if large CAMs are expected):
             </div>
@@ -107,7 +120,7 @@ const interactionSetUpStudy = `
             </div>
         </div>
 
-        <div class="row" style="background-color:#aaa;">
+        <div class="row" style="background-color:#bababa;">
         <div class="column1">
             Set study to fullscreen mode and collect paradata (recommended):
         </div>
@@ -120,7 +133,7 @@ const interactionSetUpStudy = `
         </div>
     </div>
 
-    <div class="row" style="background-color:#bababa;">
+    <div class="row" style="background-color:#aaa;">
         <div class="column1">
             Set the language of the C.A.M.E.L. interface:
         </div>
@@ -194,6 +207,8 @@ function setConfigCAMfile() {
             LengthSentence: 16, // include breaklines if >= X characters
             LengthWords: 12, // include breaklines after each word with cumsum >= X characters
             ShowResearcherButtons: false, // if true = show researcher functionalities
+
+            enableConnectorLabels: false, // if true, edges can be labeled with arbitrary text
         },
         CAM: {
             nodes: null,
@@ -246,6 +261,12 @@ function setConfigCAMfile() {
         setCAMConfig.config.fullScreen = false;
     }
 
+    if ($("#setEnableConnectorLabels").is(":checked")) {
+        setCAMConfig.config.enableConnectorLabels = true;
+    } else {
+        setCAMConfig.config.enableConnectorLabels = false;
+    }
+
     /* set up the CAM */
     // nodes
     saveNodes = [];
@@ -288,6 +309,7 @@ function setConfigCAMfile() {
             source: null,
             target: null,
             isDeletable: null,
+            text: "",
         };
         // console.log(elementNode);
 
@@ -299,6 +321,7 @@ function setConfigCAMfile() {
             currentConnector.source = elementConnector.source;
             currentConnector.target = elementConnector.target;
             currentConnector.isDeletable = elementConnector.getIsDeletable();
+            currentConnector.text = elementConnector.getText();
 
             saveConnectors.push(currentConnector);
         }
@@ -360,7 +383,7 @@ $(function () {
     });
 
     $(
-        "#setConNumNodes,#setMaxLengthWords, #setMaxLengthChars, #setLanguage"
+        "#setConNumNodes,#setMaxLengthWords, #setMaxLengthChars, #setLanguage, #setEnableConnectorLabels"
     ).change(function () {
         setConfigCAMfile();
     });
