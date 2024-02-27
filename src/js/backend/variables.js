@@ -38,3 +38,6 @@ var zoomScaleNode = 0.45;
 
 // increase slider intensity by X (thicker lines)
 const IncreaseSliderIntensity = 3;
+
+// buffer for connector labels: allows to add previously used labels with mouse click
+var connectorLabelsBuffer = new Set()

@@ -55,6 +55,7 @@ const interactionEdge = `
                 <div class="properties-size-naming">
                 ${languageFileOut.cd_08}
                 </div>
+                <div id="lastUsedConnectorLabels" style="margin-bottom: 5px"></div>
                 <input id="inptextconnector" type="text"
                     style="width: 99%; text-align: left;   margin: auto; display: block;" autofocus>
             </div>

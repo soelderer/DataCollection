@@ -212,9 +212,39 @@ $(function () {
                 type: "selected",
                 value: true,
             });
+
+
+            // print last used connector labels to enable quick labelling with mouse-click
+            $("#lastUsedConnectorLabels").html("")
+
+            for(let connectorLabel of connectorLabelsBuffer) {
+                var connectorLabelButton = document.createElement("button")
+                connectorLabelButton.setAttribute("style",
+                    `display: inline-block;
+                    outline: none;
+                    cursor: pointer;
+                    padding: 0 10px;
+                    margin-left: 8px;
+                    background-color: #fff;
+                    border-radius: 0.25rem;
+                    border: 1px solid #0070d2;
+                    color: #0070d2;
+                    font-size: 13px;
+                    line-height: 24px;
+                    font-weight: 400;
+                    text-align: center;
+                    :hover {
+                        background-color: #f4f6f9;
+                    }`)
+                    connectorLabelButton.setAttribute("onclick", "setConnectorLabelFromBuffer(this)")
+                connectorLabelButton.innerHTML = connectorLabel
+                $("#lastUsedConnectorLabels").append(connectorLabelButton)
+            }
+
         },
         close: function (event, ui) {
             console.log("dialog got closed");
+
 
             // if connector got deleted
             if (CAM.currentConnector !== null) {
@@ -237,6 +267,13 @@ $(function () {
                     type: "selected",
                     value: false,
                 });
+
+
+                // if connector labels are enabled and the label is not empty
+                // save it in the buffer for later re-use by mouse-click
+                if(config.enableConnectorLabels && CAM.currentConnector.getText() != ""){
+                    connectorLabelsBuffer.add(CAM.currentConnector.getText())
+                }
             }
         },
         position: {
@@ -363,4 +400,11 @@ function closeTab() {
     for (i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+}
+
+// connectorLabelButton was pressed -> set connectorLabel to value of that button
+function setConnectorLabelFromBuffer(connectorLabelButton) {
+    $("#inptextconnector").val(connectorLabelButton.innerHTML)
+    // trigger the event listener for input to register this programmatical value change
+    $('#inptextconnector').trigger("input")
 }
