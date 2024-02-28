@@ -41,3 +41,7 @@ const IncreaseSliderIntensity = 3;
 
 // buffer for connector labels: allows to add previously used labels with mouse click
 var connectorLabelsBuffer = new Set()
+
+if(config.onlyPredefinedConnectorLabels) {
+    connectorLabelsBuffer = new Set(config.predefinedConnectorLabels)
+}

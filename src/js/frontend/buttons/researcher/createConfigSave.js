@@ -109,6 +109,30 @@ const interactionSetUpStudy = `
 
         <div class="row" style="background-color:#aaa;">
             <div class="column1">
+                Allow only pre-defined connector labels:
+            </div>
+            <div class="column2">
+                <label class="switch" style="margin-top: 8px;">
+                <input type="checkbox" id="setOnlyPredefinedConnectorLabels">
+                <div class="slider round">
+                </div>
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row" style="background-color:#bababa;">
+            <div class="column1">
+                List of pre-defined connector labels (comma seperated):
+            </div>
+            <div class="column2">
+                <textarea id="setPredefinedConnectorLabels" style="width: 80%; margin-top: 14px; height: auto;"
+                       rows="3"></textarea>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:#aaa;">
+            <div class="column1">
                 Include splotlight feature to move screen (only recommended if large CAMs are expected):
             </div>
             <div class="column2">
@@ -208,13 +232,31 @@ function setConfigCAMfile() {
             LengthWords: 12, // include breaklines after each word with cumsum >= X characters
             ShowResearcherButtons: false, // if true = show researcher functionalities
 
-            enableConnectorLabels: false, // if true, edges can be labeled with arbitrary text
+            enableConnectorLabels: false, // if true, connections can be labeled with arbitrary text
+            onlyPredefinedConnectorLabels: false, // if true, connections can be labeled only with pre-defined labels
+            predefinedConnectorLabels: parsePredefinedConnectorLabels() // an Array for the pre-defined connector labels
         },
         CAM: {
             nodes: null,
             connectors: null,
         },
     };
+
+    /* function to parse input from textarea for pre-defined connector labels into a Set */
+    function parsePredefinedConnectorLabels() {
+        var predefinedConnectorLabels = $("#setPredefinedConnectorLabels").val().split(",");
+        predefinedConnectorLabels = predefinedConnectorLabels.map(s => s.trim()); // remove leading/trailing whitespace
+
+        // make a Set: this elegantly takes care of duplicate entries
+        predefinedConnectorLabels = new Set(predefinedConnectorLabels);
+
+        // empty element might result from something like "example, , is"
+        predefinedConnectorLabels.delete("");
+
+        // because stringify() can't handle Sets
+        return Array.from(predefinedConnectorLabels);
+    }
+
 
     /* missing values
     var MISSING = {
@@ -265,6 +307,12 @@ function setConfigCAMfile() {
         setCAMConfig.config.enableConnectorLabels = true;
     } else {
         setCAMConfig.config.enableConnectorLabels = false;
+    }
+
+    if ($("#setOnlyPredefinedConnectorLabels").is(":checked")) {
+        setCAMConfig.config.onlyPredefinedConnectorLabels = true;
+    } else {
+        setCAMConfig.config.onlyPredefinedConnectorLabels = false;
     }
 
     /* set up the CAM */
@@ -330,7 +378,6 @@ function setConfigCAMfile() {
     setCAMConfig.CAM.connectors = saveConnectors;
 
     $("#createdConfigPlusCAM").text(JSON.stringify(setCAMConfig, null, 1));
-    // console.log(JSON.parse(JSON.stringify(setConfig, null, 1)))
 }
 
 $(function () {
@@ -377,13 +424,13 @@ $(function () {
     });
 
     $(
-        "#sethideArrows, #setBidirectionalDefault, #setfullScreen, #sethideAmbivalent, #setshowOnlyPosSlid, #setcameraFeature"
+        "#sethideArrows, #setBidirectionalDefault, #setfullScreen, #sethideAmbivalent, #setshowOnlyPosSlid, #setcameraFeature, #setEnableConnectorLabels, #setOnlyPredefinedConnectorLabels"
     ).click(function () {
         setConfigCAMfile();
     });
 
     $(
-        "#setConNumNodes,#setMaxLengthWords, #setMaxLengthChars, #setLanguage, #setEnableConnectorLabels"
+        "#setConNumNodes,#setMaxLengthWords, #setMaxLengthChars, #setLanguage, #setPredefinedConnectorLabels"
     ).change(function () {
         setConfigCAMfile();
     });

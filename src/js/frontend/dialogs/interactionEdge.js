@@ -58,6 +58,7 @@ const interactionEdge = `
                 <div id="lastUsedConnectorLabels" style="margin-bottom: 5px"></div>
                 <input id="inptextconnector" type="text"
                     style="width: 99%; text-align: left;   margin: auto; display: block;" autofocus>
+                <button id="clearConnectorLabel" class="material-icons deleteButton" style="color:red;" title="Clear label">delete</button>
             </div>
 
 
@@ -126,6 +127,10 @@ $(function () {
     }
     if(config.enableConnectorLabels){
         $('#hideConnectorLabelInput').show()
+
+        if(config.onlyPredefinedConnectorLabels){
+            $('#inptextconnector').hide()
+        }
     } else{
         $('#hideConnectorLabelInput').hide()
     }
@@ -272,6 +277,11 @@ $(function () {
                 toastr.info('The connector is now deletable.');
             }
         }
+    });
+
+    $("#clearConnectorLabel").on("click", (evt) => {
+        $("#inptextconnector").val("")
+        $("#inptextconnector").trigger("input")
     });
 })
 
